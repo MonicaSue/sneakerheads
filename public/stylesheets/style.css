@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
+  background-color: #a69c9c;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -29,6 +29,10 @@ nav {
   min-height: 60px;
 }
 
+nav > #logo {
+  color: rgb(163, 2, 2);
+}
+
 main {
   display: flex;
   align-items: center;
@@ -38,4 +42,40 @@ main {
 
 .right {
   margin-left: auto;
+}
+
+#log-in {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+#log-in > h1 {
+  font-family: 'Staatliches', Helvetica, Tahoma, sans-serif;
+  font-size: 50px;
+  margin:auto;
+  color: rgb(163, 2, 2);
+  transform-style: preserve-3d;
+}
+
+.welcome-page {
+  display: flex;
+  flex-grow: 1;
+  margin: auto;
+}
+
+.welcome-page > #community {
+  background-image: url('../assets/images/community.jpeg');
+  
+}
+
+.welcome-page > #inventory {
+  background-image: url('../assets/images/sneakers.jpeg');
+}
+
+.welcome-page > #marketplace {
+  background-image: url('../assets/images/marketplace.jpeg');
 }

@@ -1,14 +1,56 @@
 <%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<% if (user) { %>
+  <%- include('./partials/nav') %>
+<% } %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
+  <% if (user) { %>
+    <container class="welcome-page">
+      <!-- <div id="community">
+        <h2>Community</h2>
+      </div>
+      <div id="inventory">
+        <h2>Inventory</h2>
+      </div>
+      <div id="marketplace">
+        <h2>Marketplace</h2>
+      </div> -->
+
+    </container>
+  <% } else { %>
+    <div id="log-in">
+      <h1>
+        <span data-text="S">S</span>
+        <span data-text="N">N</span>
+        <span data-text="E">E</span>
+        <span data-text="A">A</span>
+        <span data-text="K">K</span>
+        <span data-text="E">E</span>
+        <span data-text="R">R</span>
+        <span data-text="H">H</span>
+        <span data-text="E">E</span>
+        <span data-text="A">A</span>
+        <span data-text="D">D</span>
+        <span data-text="S">S</span>
+      </h1>
+      <h3>Keep track of your sneaker collection and connect with the community.</h3>
+      <script defer src="https://accounts.google.com/gsi/client"></script>
+      <div 
+      id="g_id_onload"
+      data-client_id="<%= googleClientID %>"
+      data-login_uri="/auth/google"
+      data-auto_prompt="false"
+    ></div>
+    <div 
+      class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-shape="circle"
+      data-logo_alignment="left"
+    ></div>
+
     </div>
   <% } %>
 </main>

@@ -102,6 +102,25 @@ function deleteSneaker(req, res) {
   })
 }
 
+function createSaleSheets(req, res) {
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    sneaker.saleSheets.push(req.body)
+    sneaker.save()
+    .then(() => {
+      res.redirect(`/sneakers/${sneaker._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newSneakers as new,
@@ -110,5 +129,5 @@ export {
   edit,
   update,
   deleteSneaker as delete,
-
+  createSaleSheets,
 }

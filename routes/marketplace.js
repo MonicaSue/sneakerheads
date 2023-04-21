@@ -5,6 +5,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 router.get('/', isLoggedIn, marketplaceCtrl.index)
+router.get('/:sneakerId', isLoggedIn, marketplaceCtrl.show)
 
 export {
   router

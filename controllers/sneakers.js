@@ -23,6 +23,7 @@ function newSneakers(req, res) {
 }
 
 function create(req, res) {
+  req.body.owner = req.user.profile._id
   Sneaker.create(req.body)
   .then(sneaker => {
     console.log(sneaker)
@@ -36,6 +37,9 @@ function create(req, res) {
 
 function show(req, res) {
   Sneaker.findById(req.params.sneakerId)
+  .populate([
+    {path: 'owner'},
+  ])
   .then(sneaker => {
     res.render('sneakers/show', {
       title: 'Sneaker Detail',
@@ -48,10 +52,63 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  console.log('edit')
+  console.log(req.params.sneakerId)
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    res.render('sneakers/edit', {
+      sneaker, 
+      title: 'Edit'
+    })
+  })
+}
+
+function update(req, res) {
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    if (sneaker.owner.equals(req.user.profile._id)) {
+      sneaker.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/sneakers/${sneaker._id}`)
+      })
+    } else {
+      throw new Error (`Not Authorized`)
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/sneakers')
+  })
+}
+
+
+
+function deleteSneaker(req, res) {
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    if (sneaker.owner.equals(req.user.profile._id)) {
+      sneaker.deleteOne()
+      .then(() => {
+        res.redirect('/sneakers')
+      })
+    } else {
+      throw new Error (`Not Authorized`)
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/sneakers')
+  })
+}
+
 export {
   index,
   newSneakers as new,
   create,
   show,
+  edit,
+  update,
+  deleteSneaker as delete,
 
 }

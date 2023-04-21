@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/sneakers/forms.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="edit-form" action="/sneakers/<%= sneaker._id %>?_method=PUT" method="POST">
+    <label for="imageUrl-input">Image URL:</label>
+    <input type="text" name="imageUrl" value="<%= sneaker.imageUrl %>" id="imageUrl-input">
+    <label for="brand-input">Brand:</label>
+    <input type="text" name="brand" value="<%= sneaker.brand %>" id="brand-input">
+    <label for="nickname-input">Nickname:</label>
+    <input type="text" name="nickname" value="<%= sneaker.nickname %>" id="nickname-input">
+    <label for="releaseYear-input">Release Year:</label>
+    <input type="number" name="releaseYear" value="<%= sneaker.releaseYear %>" id="releaseYear-input" min="1900" max="2099" step="1" autocomplete="off" placeholder="YYYY">
+    <label for="sku-input">SKU:</label>
+    <input type="text" name="sku" value="<%= sneaker.sku %>" id="sku-input">
+    <label for="size-input">Size:</label>
+    <input type="number" name="size" value="<%= sneaker.size %>" id="size-input" min="1" max="30" step="0.5">
+    <label for="purchasePrice-input">Purchase Price:</label>
+    <input type="number" name="purchasePrice" value="<%= sneaker.purchasePrice %>" id="purchasePrice-input">
+    <button type="submit">Update</button>
+  </form>
+</main>
+
+
+<%- include('../partials/footer') %>

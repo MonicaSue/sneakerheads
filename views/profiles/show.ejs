@@ -9,13 +9,16 @@
       alt="<%= profile.name %>'s avatar"
     >
   </div>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
-    <%# New code below %> 
-  <% if (isSelf)  {%> 
+  <h1><%= isSelf ? "" : profile.name %></h1>
+  <% if (profile.headlines.length) { %>
+    <% profile.headlines.forEach(headline => { %>
+      <%= headline.content %>
+    <% }) %>
+  <% } %>
+  <% if (isSelf)  {%>
     <h2>Add a headline!</h2>
     <form action="/profiles/<%= profile._id %>/headlines" method="POST">
       <label>
-        Headline: 
         <textarea type="text" name="content" autocomplete="off">
         </textarea>
       <button type="submit">Add</button>

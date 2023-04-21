@@ -18,7 +18,7 @@ const sneakerSchema = new Schema({
   imageUrl: String,
   brand: String,
   nickname: String,
-  releaseYear: Date,
+  releaseYear: Number,
   sku: String,
   pairs: Number,
   size: Number,

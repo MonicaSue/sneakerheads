@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/sneakers/show.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <section>
+    <div>
+      <a href="/sneakers/<%= sneaker._id %>/edit">
+        <button>Edit Sneaker</button>
+      </a>
+    </div>
+    <div></div>
+    <div>Brand</div>
+    <div><%= sneaker.brand %></div>
+    <div>Nickname</div>
+    <div><%= sneaker.nickname %></div>
+    <div>Release Year</div>
+    <div><%= sneaker.releaseYear %></div>
+    <div>SKU</div>
+    <div><%= sneaker.sku %></div>
+    <div>Size</div>
+    <div><%= sneaker.size %></div>
+    <div>Purchase Price</div>
+    <div><%= sneaker.purchasePrice %></div>
+  </section>
+
+  <%- include('../partials/footer') %>

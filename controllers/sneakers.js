@@ -34,9 +34,24 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    res.render('sneakers/show', {
+      title: 'Sneaker Detail',
+      sneaker,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newSneakers as new,
-  create
+  create,
+  show,
 
 }

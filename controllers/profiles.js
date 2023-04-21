@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Sneaker } from '../models/sneaker.js'
 
 function index(req, res) {
   Profile.find({})
@@ -14,43 +15,11 @@ function index(req, res) {
   })
 }
 
-function show(req, res) {
-  Profile.findById(req.params.sneakerId)
-  .then(profile => {
-    const isSelf = profile._id.equals(req.user.profile._id)
-    res.render('profiles/show', {
-      title: `${profile.name}'s profile`,
-      profile,
-      isSelf,
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/profiles')
-  })
-}
 
-function createHeadline(req, res) {
-  Profile.findById(req.user.profile._id)
-    .then(profile => {
-      profile.headlines.push(req.body)
-      profile.save()
-      .then(() => {
-        res.redirect(`/profiles/${req.user.profile._id}`)
-      })
-      .catch(err => {
-        console.log(err)
-        res.redirect(`/profiles/${req.user.profile._id}`)
-      })
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect(`/profiles/${req.user.profile._id}`)
-    })
-}
+
 
 export {
   index,
-  show,
-  createHeadline,
+
+
 }

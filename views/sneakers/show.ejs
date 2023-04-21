@@ -31,6 +31,21 @@
     <div>Ready to sell or trade?</div>
     <div><%= sneaker.isForSale ? 'Yes' : 'No' %></div>
   </section>
+  <section>
+    <% if (sneaker.isForSale) { %>
+      <form 
+        id="add-sellsheet-form"
+        action="/sneakers/<%= sneaker._id %>/sellSheets"
+        method="POST"
+      >
+      <label for="condition-input">Condition:</label>
+      <input type="text" name="condition" id="condition-input">
+      <label for="sale-price-input">Sale Price</label>
+      <input type="text" name="salePrice" id="sale-price-input">
+      <button type="submit">Add Sale Sheet</button>
+      </form>
+    <% } %>
+  </section>
 </main>  
 
   <%- include('../partials/footer') %>

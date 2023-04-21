@@ -1,6 +1,20 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h2>INDEX</h2>
+<main>
+  <div class="search-add">
+    <form action="/sneakers/results" method="POST">
+      <input type="search" name="q" placeholder="Search Sneakers">
+      <button type="submit">Search</button>
+    </form>
+    
+    <a href="/sneakers/new">
+      <button class="btn">+</button>
+    </a>
+    
+  </div>
+
+  //ADD FOR EACH TO PULL INVENTORY
+</main>
 
 <%- include('../partials/footer') %>

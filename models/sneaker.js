@@ -4,11 +4,18 @@ const Schema = mongoose.Schema
 
 const commentSchema = new Schema({
   content: String,
+  commenter: { type: Schema.Types.ObjectId, ref: "Profile" },
 }, {
   timestamps: true
 })
 
+const saleSheetSchema = new Schema({
+  condition: String,
+  salePrice: Number,
+})
+
 const sneakerSchema = new Schema({
+  imageUrl: String,
   brand: String,
   nickname: String,
   releaseYear: Date,
@@ -16,9 +23,10 @@ const sneakerSchema = new Schema({
   pairs: Number,
   size: Number,
   purchasePrice: Number,
-  marketplace: {type: Schema.Types.ObjectId, ref: "Marketplace"},
-  owner: {type: Schema.Types.ObjectId, ref: "profile"},
   comments: [commentSchema],
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
+  isForSale: Boolean,
+  saleSheets: [saleSheetSchema],
 }, {
   timestamps: true,
 })

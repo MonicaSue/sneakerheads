@@ -4,7 +4,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <section>
+  <section class="sneaker-details">
     <div>
       <% if (sneaker.owner.equals(user?.profile._id)) { %>     
         <a href="/sneakers/<%= sneaker._id %>/edit">
@@ -31,8 +31,35 @@
     <div>Ready to sell or trade?</div>
     <div><%= sneaker.isForSale ? 'Yes' : 'No' %></div>
   </section>
-  <section>
-    <% if (sneaker.isForSale) { %>
+  <section class="sneaker-sale-sheet">
+    <% if (sneaker.saleSheets.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Sale Price</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% sneaker.saleSheets.forEach(saleSheet => { %>
+            <tr>
+              <td><%= saleSheet.condition %></td>
+              <td><%= saleSheet.salePrice %></td>
+              <td>
+                <form 
+                  action="/sneaker/<%= sneaker._id %>/salesheets/<%= salesheet._id %>?_method=DELETE"
+                  method="POST"
+                >
+                  <button type="submit">X</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+    <% if (sneaker.isForSale && !sneaker.saleSheets.length) { %>
       <form 
         id="add-sellsheet-form"
         action="/sneakers/<%= sneaker._id %>/salesheets"

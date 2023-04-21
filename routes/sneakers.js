@@ -17,6 +17,7 @@ router.post('/:sneakerId/salesheets', sneakersCtrl.createSaleSheets)
 router.put('/:sneakerId', isLoggedIn, sneakersCtrl.update)
 
 router.delete('/:sneakerId', isLoggedIn, sneakersCtrl.delete)
+router.delete('/:sneakerId/salesheets/:salesheetId', isLoggedIn, sneakersCtrl.deleteSaleSheet)
 
 export {
   router

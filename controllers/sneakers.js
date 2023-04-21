@@ -123,6 +123,10 @@ function createSaleSheets(req, res) {
   })
 }
 
+function deleteSaleSheet(req, res) {
+  
+}
+
 export {
   index,
   newSneakers as new,
@@ -132,4 +136,5 @@ export {
   update,
   deleteSneaker as delete,
   createSaleSheets,
+  deleteSaleSheet
 }

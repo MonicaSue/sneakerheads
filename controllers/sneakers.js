@@ -24,6 +24,7 @@ function newSneakers(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
+  req.body.isForSale = !!req.body.isForSale
   Sneaker.create(req.body)
   .then(sneaker => {
     console.log(sneaker)
@@ -65,6 +66,7 @@ function edit(req, res) {
 }
 
 function update(req, res) {
+  req.body.isForSale = !!req.body.isForSale
   Sneaker.findById(req.params.sneakerId)
   .then(sneaker => {
     if (sneaker.owner.equals(req.user.profile._id)) {

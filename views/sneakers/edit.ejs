@@ -19,6 +19,13 @@
     <input type="number" name="size" value="<%= sneaker.size %>" id="size-input" min="1" max="30" step="0.5">
     <label for="purchasePrice-input">Purchase Price:</label>
     <input type="number" name="purchasePrice" value="<%= sneaker.purchasePrice %>" id="purchasePrice-input">
+    <label for="for-sale-checkbox">Ready to sell or trade?</label>
+    <input 
+      type="checkbox" 
+      name="isForSale" 
+      id="for-sale-checkbox" 
+      <%= sneaker.isForSale ? "checked" : "" %>
+      >
     <button type="submit">Update</button>
   </form>
 </main>

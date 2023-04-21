@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <div>
+    <img 
+      class="profile-avatar"
+      src="<%= profile.avatar %>" 
+      alt="<%= profile.name %>'s avatar"
+    >
+  </div>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+    <%# New code below %> 
+  <% if (isSelf)  {%> 
+    <h2>Add a headline!</h2>
+    <form action="/profiles/<%= profile._id %>/headlines" method="POST">
+      <label>
+        Headline: 
+        <textarea type="text" name="content" autocomplete="off">
+        </textarea>
+      <button type="submit">Add</button>
+    </form>
+  <% } %>
+  </main>
+
+<%- include('../partials/footer') %>

@@ -12,12 +12,12 @@ router.get('/:sneakerId', isLoggedIn, sneakersCtrl.show)
 router.get('/:sneakerId/edit', isLoggedIn, sneakersCtrl.edit)
 
 router.post('/', isLoggedIn, sneakersCtrl.create)
-router.post('/:sneakerId/salesheets', sneakersCtrl.createSaleSheets)
+router.post('/:sneakerId/saleSheets', sneakersCtrl.createSaleSheets)
 
 router.put('/:sneakerId', isLoggedIn, sneakersCtrl.update)
 
 router.delete('/:sneakerId', isLoggedIn, sneakersCtrl.delete)
-router.delete('/:sneakerId/salesheets/:salesheetId', isLoggedIn, sneakersCtrl.deleteSaleSheet)
+router.delete('/:sneakerId/saleSheets/:saleSheetId', isLoggedIn, sneakersCtrl.deleteSaleSheet)
 
 export {
   router

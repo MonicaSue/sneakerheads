@@ -48,7 +48,7 @@
               <td><%= saleSheet.salePrice %></td>
               <td>
                 <form 
-                  action="/sneaker/<%= sneaker._id %>/salesheets/<%= salesheet._id %>?_method=DELETE"
+                  action="/sneakers/<%= sneaker._id %>/saleSheets/<%= saleSheet._id %>?_method=DELETE"
                   method="POST"
                 >
                   <button type="submit">X</button>
@@ -62,7 +62,7 @@
     <% if (sneaker.isForSale && !sneaker.saleSheets.length) { %>
       <form 
         id="add-sellsheet-form"
-        action="/sneakers/<%= sneaker._id %>/salesheets"
+        action="/sneakers/<%= sneaker._id %>/saleSheets"
         method="POST"
       >
       <label for="condition-input">Condition:</label>

@@ -9,6 +9,8 @@ const router = Router()
 router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:sneakerId', isLoggedIn, profilesCtrl.show)
 
+router.post('/:sneakerId/headlines', isLoggedIn, profilesCtrl.createHeadline)
+
 export {
   router
 }

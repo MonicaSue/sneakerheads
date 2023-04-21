@@ -3,6 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <h1><%= title %></h1>
   <div class="card-container">
     <% profiles.forEach(profile => { %>
       <a class="text-decoration-none" href="/profiles/<%= profile._id %>">

@@ -2,11 +2,12 @@ import { Profile } from '../models/profile.js'
 import { Sneaker } from '../models/sneaker.js'
 
 function index(req, res) {
-  Profile.find({})
-  .then(profiles => {
-    res.render('profiles/index', {
-      profiles,
-      title: 'Community'
+  Sneaker.find({ isForSale: 'true' })
+  .then(sneakers => {
+    console.log('marketplace console', sneakers)
+    res.render('marketplace/index', {
+      sneakers,
+      title: 'Marketplace'
     })
   })
   .catch(err => {

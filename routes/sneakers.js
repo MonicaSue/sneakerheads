@@ -12,6 +12,7 @@ router.get('/:sneakerId', isLoggedIn, sneakersCtrl.show)
 router.get('/:sneakerId/edit', isLoggedIn, sneakersCtrl.edit)
 
 router.post('/', isLoggedIn, sneakersCtrl.create)
+router.post('/:sneakerId/saleSheets', sneakersCtrl.createSaleSheets)
 
 router.put('/:sneakerId', isLoggedIn, sneakersCtrl.update)
 

@@ -9,10 +9,10 @@ const Schema = mongoose.Schema
 //   timestamps: true
 // })
 
-// const saleSheetSchema = new Schema({
-//   condition: String,
-//   salePrice: Number,
-// })
+const saleSheetSchema = new Schema({
+  condition: String,
+  salePrice: Number,
+})
 
 const sneakerSchema = new Schema({
   imageUrl: String,
@@ -25,8 +25,8 @@ const sneakerSchema = new Schema({
   purchasePrice: Number,
   // comments: [commentSchema],
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  // isForSale: Boolean,
-  // saleSheets: [saleSheetSchema],
+  isForSale: Boolean,
+  saleSheets: [saleSheetSchema],
 }, {
   timestamps: true,
 })

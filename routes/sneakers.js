@@ -4,17 +4,18 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-// GET local:3000/sneakers
-router.get('/', sneakersCtrl.index)
+// All routes are local:3000/sneakers
+
+router.get('/', isLoggedIn, sneakersCtrl.index)
 router.get('/new', isLoggedIn, sneakersCtrl.new)
 router.get('/:sneakerId', isLoggedIn, sneakersCtrl.show)
 router.get('/:sneakerId/edit', isLoggedIn, sneakersCtrl.edit)
 
-router.post('/', sneakersCtrl.create)
+router.post('/', isLoggedIn, sneakersCtrl.create)
 
-router.put('/:sneakerId', sneakersCtrl.update)
+router.put('/:sneakerId', isLoggedIn, sneakersCtrl.update)
 
-router.delete('/:sneakerId', sneakersCtrl.delete)
+router.delete('/:sneakerId', isLoggedIn, sneakersCtrl.delete)
 
 export {
   router

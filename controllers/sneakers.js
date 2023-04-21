@@ -10,22 +10,33 @@ function index(req, res) {
       title: 'My Inventory'
     })
   })
-  .catch((err) => {
+  .catch(err => {
     console.log(err)
     res.redirect('/')
   })
 } 
 
 function newSneakers(req, res) {
-  console.log('New Works')
   res.render('sneakers/new', {
     title: 'Add Sneakers',
   })
 }
 
+function create(req, res) {
+  Sneaker.create(req.body)
+  .then(sneaker => {
+    console.log(sneaker)
+    res.redirect('/sneakers')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/sneakers/new')
+  })
+}
 
 export {
   index,
   newSneakers as new,
+  create
 
 }

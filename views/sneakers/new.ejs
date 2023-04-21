@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/sneakers/forms.css">
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/sneakers" method="POST">
+    <label for="imageUrl-input">Image URL:</label>
+    <input type="text" name="imageUrl" id="imageUrl-input">
+    <label for="brand-input">Brand:</label>
+    <input type="text" name="brand" id="brand-input">
+    <label for="nickname-input">Nickname:</label>
+    <input type="text" name="nickname" id="nickname-input">
+    <label for="releaseYear-input">Release Year:</label>
+    <input type="number" name="releaseYear" id="releaseYear-input" min="1900" max="2099" step="1" autocomplete="off" placeholder="YYYY">
+    <label for="sku-input">SKU:</label>
+    <input type="text" name="sku" id="sku-input">
+    <label for="size-input">Size:</label>
+    <input type="number" name="size" id="size-input" min="1" max="30" step="0.5">
+    <label for="purchasePrice-input">Purchase Price:</label>
+    <input type="number" name="purchasePrice" id="purchasePrice-input">
+    <button type="submit">Add to Inventory</button>
+  </form>
+</main>
+
+
+<%- include('../partials/footer') %>

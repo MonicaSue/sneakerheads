@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/sneakers/index.css">
 <%- include('../partials/nav') %>
 
 <main>
@@ -7,14 +8,26 @@
       <input type="search" name="q" placeholder="Search Sneakers">
       <button type="submit">Search</button>
     </form>
-    
     <a href="/sneakers/new">
       <button class="btn">+</button>
     </a>
-    
   </div>
-
-  //ADD FOR EACH TO PULL INVENTORY
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Brand</th>
+        <th>Nickname</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% sneakers.forEach(sneaker => { %>
+        <td><%= sneaker.brand %></td>
+        <td><%= sneaker.nickname %></td>
+        <td><a href="/sneakers/<%= sneaker._id %>">Details</td></a>
+      <% }) %>
+    </tbody>
+  </table>
 </main>
 
 <%- include('../partials/footer') %>

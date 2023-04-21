@@ -7,6 +7,8 @@ const router = Router()
 router.get('/', sneakersCtrl.index)
 router.get('/new', sneakersCtrl.new)
 
+router.post('/', sneakersCtrl.create)
+
 export {
   router
 }

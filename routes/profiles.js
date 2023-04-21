@@ -7,6 +7,8 @@ const router = Router()
 // All routes are local:3000/profiles
 
 router.get('/', isLoggedIn, profilesCtrl.index)
+router.get('/:profileId', isLoggedIn, profilesCtrl.show)
+
 
 
 

@@ -15,11 +15,32 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    Sneaker.find({owner: req.params.profileId})
+    .then(sneakers => {
+      res.render('profiles/show', {
+        title: profile.name,
+        profile,
+        sneakers
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/profiles')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
 
 
 
 export {
   index,
-
+  show,
 
 }

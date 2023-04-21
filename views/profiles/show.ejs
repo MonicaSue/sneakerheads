@@ -9,23 +9,17 @@
       alt="<%= profile.name %>'s avatar"
     >
   </div>
-  <h1><%= isSelf ? "" : profile.name %></h1>
-  <% if (profile.headlines.length) { %>
-    <% profile.headlines.forEach(headline => { %>
-      <%= headline.content %>
+  <h1><%= profile.name %>'s Sneaker Inventory</h1>
+  <div class="sneaker-container">
+    <% sneakers.forEach(sneaker => { %>
+      <div class="sneaker-card">
+        <!-- ADD IMAGE WITH LINK -->
+        <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.brand %> <%= sneaker.nickname %></a>
+
+      </div>
     <% }) %>
-  <% } %>
-  <% if (isSelf)  {%>
-    <h2>Add a headline!</h2>
-    <form action="/profiles/<%= profile._id %>/headlines" method="POST">
-      <label>
-        <textarea type="text" name="content" autocomplete="off">
-        </textarea>
-      <button type="submit">Add</button>
-    </form>
-  <% } else {%>
-    <a href="/sneakers/"></a>
-  <% } %>
+
+  </div>
   </main>
 
 <%- include('../partials/footer') %>

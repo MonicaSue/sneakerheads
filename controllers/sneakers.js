@@ -1,8 +1,7 @@
 import { Sneaker } from '../models/sneaker.js'
 
 function index(req, res) {
-  Sneaker.find({})
-  .populate('owner')
+  Sneaker.find({owner: req.user.profile._id})
   .then(sneakers => {
     console.log(sneakers)
     res.render('sneakers/index', {

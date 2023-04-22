@@ -17,12 +17,11 @@
     <ul class="shoebox-gallery">
       <li>
         <% sneakers.forEach(sneaker => { %>
-          <img 
-            src="../assets/images/sneakerbox_images/<%= sneaker.brand %>.png" 
-            alt="sneakerbox"
-          >
           <div class="overlay">
             <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %></a>
+            <img 
+              src="../assets/images/sneakerbox_images/<%= sneaker.  brand %>.png" 
+              alt="sneakerbox">
           </div>
         <% }) %>
       </li>

@@ -22,6 +22,8 @@ h1 {
 }
 
 .shoebox-container {
+  /* border: 2px rgb(216, 10, 10) solid;
+  background-color: rgba(169, 169, 169, 0.734); */
   padding: 40px 5%;
   /* max-height: 700px; */
 }
@@ -31,10 +33,14 @@ ul {
 }
 
 .shoebox-gallery {
+  /* border: 2px black solid;
+  background: rgba(255, 255, 255, 0.42); */
+  max-height: 750px;
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  /* gap: 10px; */
+
 }
 
 .shoebox-gallery > li {
@@ -51,18 +57,18 @@ ul {
   border-radius: 5px;
 }
 
-.overlay {
-  position: center;
-  max-width: 100%;
-  height: auto;
+.overlay > a {
+  /* position: center; */
+  /* max-width: 100%;
+  height: auto; */
   background: rgba(255, 255, 255, 0.579);
-  top: 10%;
-  left: 25%;
+  top: 0;
+  left: 0;
   color: black;
   border-radius: 5px;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 

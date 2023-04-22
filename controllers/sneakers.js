@@ -22,8 +22,17 @@ function newSneakers(req, res) {
   })
 }
 
+// code found https://coderrocketfuel.com/article/handle-get-request-query-string-parameters-in-express-js
 function search(req, res) {
-  console.log('search works')
+  const brandName = req.query.brandName
+  console.log('BrandSEARCH', brandName)
+  Sneaker.find({ brand: brandName })
+  .then(sneakers => {
+    res.render('sneakers/search', {
+      sneakers,
+      title: 'Search Results'
+    })
+  })
 }
 
 function create(req, res) {

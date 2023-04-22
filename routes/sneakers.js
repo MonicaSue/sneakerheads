@@ -8,11 +8,11 @@ const router = Router()
 
 router.get('/', isLoggedIn, sneakersCtrl.index)
 router.get('/new', isLoggedIn, sneakersCtrl.new)
+router.get('/search', isLoggedIn, sneakersCtrl.search)
 router.get('/:sneakerId', isLoggedIn, sneakersCtrl.show)
 router.get('/:sneakerId/edit', isLoggedIn, sneakersCtrl.edit)
 
 router.post('/', isLoggedIn, sneakersCtrl.create)
-router.post('/search', isLoggedIn, sneakersCtrl.search)
 router.post('/:sneakerId/saleSheets', isLoggedIn, sneakersCtrl.createSaleSheets)
 
 router.put('/:sneakerId', isLoggedIn, sneakersCtrl.update)

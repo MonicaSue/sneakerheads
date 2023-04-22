@@ -1,0 +1,32 @@
+body {
+  background-image: url('/assets/images/bedroom_images/bedroom2.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.sneaker-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  
+}
+
+.sneaker-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  text-align: center;
+  border: 10px solid gray;
+  border-style: groove;
+  background-color: white;
+  
+}
+
+.sneaker-card img {
+  object-fit: cover;
+  height: 200px;
+  width: auto;
+}

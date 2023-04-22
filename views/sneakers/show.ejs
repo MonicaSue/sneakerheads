@@ -14,6 +14,9 @@
       </form>
     <% } %>
   </div>
+  <% if (sneaker.imageUrl) { %>
+    <img src="<%= sneaker.imageUrl %>" alt="sneakers" width="auto" height="200px>
+  <% } %>  
   <section class="sneaker-details">
     <div>Brand</div>
     <div><%= sneaker.brand %></div>

@@ -2,12 +2,12 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-// const commentSchema = new Schema({
-//   content: String,
-//   commenter: { type: Schema.Types.ObjectId, ref: "Profile" },
-// }, {
-//   timestamps: true
-// })
+const commentSchema = new Schema({
+  content: String,
+  commenter: { type: Schema.Types.ObjectId, ref: "Profile" },
+}, {
+  timestamps: true
+})
 
 const saleSheetSchema = new Schema({
   condition: String,
@@ -27,7 +27,7 @@ const sneakerSchema = new Schema({
   pairs: Number,
   size: Number,
   purchasePrice: Number,
-  // comments: [commentSchema],
+  comments: [commentSchema],
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   isForSale: Boolean,
   saleSheets: [saleSheetSchema],

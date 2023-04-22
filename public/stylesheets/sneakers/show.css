@@ -5,6 +5,11 @@
   margin-bottom: 20px;
 }
 
+img {
+  border-radius: 20%;
+  margin-bottom: 20px;
+}
+
 section {
   display: grid;
   grid-template-columns: auto auto;

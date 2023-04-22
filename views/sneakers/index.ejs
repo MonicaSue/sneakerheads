@@ -13,22 +13,24 @@
       <button class="btn">+</button>
     </a>
   </div>
-  <table id="list">
-    <thead>
-      <tr>
-        <th>Brand</th>
-        <th>Nickname</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% sneakers.forEach(sneaker => { %>
-        <td><%= sneaker.brand %></td>
-        <td><%= sneaker.nickname %></td>
-        <td><a href="/sneakers/<%= sneaker._id %>">Details</td></a>
-      <% }) %>
-    </tbody>
-  </table>
+  <div class="shoebox-container">
+    <ul class="shoebox-gallery">
+      <li>
+        <% sneakers.forEach(sneaker => { %>
+          <img 
+            src="../assets/sneakerbox_images/<%= sneaker.brand %>.png" 
+            alt="sneakerbox"
+          >
+          <div 
+            class="overlay">
+              <span>
+                <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %>
+                </span></a>
+          </div>
+        <% }) %>
+      </li>
+    </ul>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>

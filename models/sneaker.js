@@ -16,7 +16,11 @@ const saleSheetSchema = new Schema({
 
 const sneakerSchema = new Schema({
   imageUrl: String,
-  brand: String,
+  brand: {
+    type: String,
+    enum: ['Adidas', 'Converse', 'Jordan', 'New_Balance', 'Nike', 'Vans', 'Yeezy'],
+    default: 'Nike',
+  },
   nickname: String,
   releaseYear: Number,
   sku: String,

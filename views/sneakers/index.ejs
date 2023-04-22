@@ -5,8 +5,8 @@
 <main>
   <h1><%= title %></h1>
   <div class="search-add">
-    <form action="/sneakers/results" method="POST">
-      <input type="search" name="q" placeholder="Search Sneakers">
+    <form action="/sneakers/search" method="POST">
+      <input type="search" name="q" placeholder="Search Brand" autocomplete="off">
       <button type="submit">Search</button>
     </form>
     <a href="/sneakers/new">
@@ -18,14 +18,11 @@
       <li>
         <% sneakers.forEach(sneaker => { %>
           <img 
-            src="../assets/sneakerbox_images/<%= sneaker.brand %>.png" 
+            src="../assets/images/sneakerbox_images/<%= sneaker.brand %>.png" 
             alt="sneakerbox"
           >
-          <div 
-            class="overlay">
-              <span>
-                <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %>
-                </span></a>
+          <div class="overlay">
+            <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %></a>
           </div>
         <% }) %>
       </li>

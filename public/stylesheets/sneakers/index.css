@@ -1,17 +1,29 @@
+body {
+  background-image: url('/assets/images/bedroom2.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+h1 {
+  margin-top: 20px;
+}
+
 .search-add {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin: 10px;
 }
 
 .shoebox-container {
   padding: 40px 5%;
+  /* max-height: 700px; */
 }
 
 ul {
@@ -26,14 +38,14 @@ ul {
 }
 
 .shoebox-gallery > li {
-  flex-basis: 350px;
+  flex-basis: 175px;
   position: relative;
   cursor: pointer;
 }
 
 .shoebox-gallery li img {
   object-fit: cover;
-  max-width: 50%;
+  max-width: 100%;
   height: auto;
   vertical-align: middle;
   border-radius: 5px;
@@ -41,7 +53,7 @@ ul {
 
 .overlay {
   position: center;
-  width: auto;
+  max-width: 100%;
   height: auto;
   background: rgba(255, 255, 255, 0.579);
   top: 10%;

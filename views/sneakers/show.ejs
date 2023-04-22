@@ -4,18 +4,17 @@
 
 <main>
   <h1><%= title %></h1>
+  <div class="button-section">
+    <% if (sneaker.owner.equals(user?.profile._id)) { %>     
+      <a href="/sneakers/<%= sneaker._id %>/edit">
+        <button>Update</button>
+      </a>
+      <form action="/sneakers/<%= sneaker._id %>?_method=Delete" method="POST">
+        <button type="submit">Remove</button>
+      </form>
+    <% } %>
+  </div>
   <section class="sneaker-details">
-    <div>
-      <% if (sneaker.owner.equals(user?.profile._id)) { %>     
-        <a href="/sneakers/<%= sneaker._id %>/edit">
-          <button>Update</button>
-        </a>
-        <form action="/sneakers/<%= sneaker._id %>?_method=Delete" method="POST">
-          <button type="submit">Remove</button>
-        </form>
-      <% } %>
-    </div>
-    <div></div>
     <div>Brand</div>
     <div><%= sneaker.brand %></div>
     <div>Nickname</div>

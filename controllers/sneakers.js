@@ -22,6 +22,10 @@ function newSneakers(req, res) {
   })
 }
 
+function search(req, res) {
+  console.log('search works')
+}
+
 function create(req, res) {
   req.body.owner = req.user.profile._id
   req.body.isForSale = !!req.body.isForSale
@@ -146,6 +150,7 @@ function deleteSaleSheet(req, res) {
 export {
   index,
   newSneakers as new,
+  search,
   create,
   show,
   edit,

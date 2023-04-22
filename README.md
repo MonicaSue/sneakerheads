@@ -20,9 +20,11 @@ Planning materials and original wireframes can be found [here](https://trello.co
 * Git
 
 ## Attributions
-* (start here)
+* Shoebox Images by [ICONFINDER: Fopifopi](https://www.iconfinder.com/iconsets/shoes-box)
+* Favicon Image by [Flaticon](https://www.flaticon.com/free-icon/sneakers_2589903?term=sneaker&related_id=2589904&origin=search)
+* Bedroom Image by [Freepik](https://www.freepik.com/free-photo/rubber-fig-gray-room_4100641.htm#query=empty%20wall&position=29&from_view=keyword&track=ais)
 
 ## Ice Box
-[ ] Add a marketplace page for users to view current sneakers for sale by other users.
-[ ] Add a user to upload their own image.
-[ ] Add search fields for marketplace based on brand, nickname, release year, and price.
+- [ ] Add a marketplace page for users to view current sneakers for sale by other users.
+- [ ] Add a user to upload their own image.
+- [ ] Add search fields for marketplace based on brand, nickname, release year, and price.

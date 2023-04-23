@@ -20,7 +20,7 @@ section div:nth-child(odd) {
   font-weight: bold;
 }
 
-ul {
+/* ul {
   margin: 0 0 16px;
   padding: 0;
   list-style: none;
@@ -28,7 +28,7 @@ ul {
 
 li {
   font-weight: bold;
-}
+} */
 
 table {
   font-size: 20px;

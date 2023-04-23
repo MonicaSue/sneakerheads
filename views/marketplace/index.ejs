@@ -1,20 +1,20 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/profiles/index.css">
+<link rel="stylesheet" href="/stylesheets/marketplace/index.css">
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
-  <div class="card-container">
+  <div class="sneaker-container">
     <% sneakers.forEach(sneaker => { %>
-      <a class="text-decoration-none" href="/marketplace/<%= sneaker._id %>">
-        <div class="card">
-          <div class="card-body">
-            <h1 class="card-title"><%= sneaker.name %></h1>
-          </div>
-        </div>
-      </a>
+      <div class="sneaker-card">
+        <a href="/sneakers/<%= sneaker._id %>"><img src="<%= sneaker.imageUrl %>" alt="sneakers" height="200px" width="auto"></a>
+        <p><%= sneaker.saleSheets.salePrice %></p>
+        
+
+      </div>
     <% }) %>
+
   </div>
-</main>
+  </main>
 
 <%- include('../partials/footer') %>

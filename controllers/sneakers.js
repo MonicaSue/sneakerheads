@@ -55,7 +55,7 @@ function show(req, res) {
   ])
   .then(sneaker => {
     res.render('sneakers/show', {
-      title: 'Sneaker Detail',
+      title: 'THE DETAILS',
       sneaker,
     })
   })

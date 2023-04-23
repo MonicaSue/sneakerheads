@@ -1,0 +1,30 @@
+body {
+  background-color: white;
+  color: black;
+}
+
+
+
+.sneaker-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  
+}
+
+.sneaker-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  text-align: center;
+  background-color: white;
+  
+}
+
+.sneaker-card img {
+  object-fit: cover;
+  height: 150px;
+  width: 200px;
+}

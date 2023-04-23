@@ -19,24 +19,44 @@
         <span data-text="D">D</span>
         <span data-text="S">S</span>
       </div> 
-      <a 
-        href="/sneakers" class="right" id="<%= title === 'All Sneakers' ? 'active' : '' %>"
-        >
-          My Inventory
-      </a>
-      <a 
-        href="/profiles" class="right" id="<%= title === 'All Profiles' ? 'active' : '' %>"
-        >
-          Community
-      </a>
-       <a 
-        href="/marketplace" class="right" id="<%= title === 'Marketplace' ? 'active' : '' %>"
-        >
-          Marketplace
-      </a>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
+      <div id="desktop-menu">
+        <a 
+          href="/sneakers" class="right" id="<%= title === 'All Sneakers' ? 'active' : '' %>"
+          >
+            My Inventory
+        </a>
+        <a 
+          href="/profiles" class="right" id="<%= title === 'All Profiles' ? 'active' : '' %>"
+          >
+            Community
+        </a>
+        <a 
+          href="/marketplace" class="right" id="<%= title === 'Marketplace' ? 'active' : '' %>"
+          >
+            Marketplace
+        </a>
+        <a href="/auth/logout" class="right">
+          <button type="submit">Logout</button>
+        </a>
+      </div>
+      <div id="mobile-menu">
+        <div id="menu-bar" onclick="menuOnClick()">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+        </div>
+        <div class="nav" id="nav">
+          <ul>
+            <li><a href="/sneakers">My Inventory</a></li>
+            <li><a href="/profiles">Community</a></li>
+            <li><a href="/marketplace">Marketplace</a></li>
+            <li><a href="/auth/logout">
+              <button type="submit">Logout</button>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-bg" id="menu-bg"></div>
     </nav>
   <% } %>
     

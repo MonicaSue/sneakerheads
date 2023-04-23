@@ -12,12 +12,17 @@ html {
 }
 
 body {
-  background-color: #a69c9c;
+  background-color: #807979;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
+}
+
+#mobile-menu {
+  visibility: hidden;
+  display: none;
 }
 
 nav {
@@ -53,6 +58,10 @@ main {
   flex-direction: column;
 }
 
+#google-login {
+  margin-top: 50px;
+}
+
 #log-in > h1 {
   font-family: 'Staatliches', Helvetica, Tahoma, sans-serif;
   font-size: 70px;
@@ -69,21 +78,140 @@ main {
   transform-style: preserve-3d;
 }
 
-.welcome-page {
+.feature-container {
+  margin-top: 75px;
+}
+
+.full-background-color {
+  background-color: rgba(163, 2, 2, 0.25);
+}
+
+.feature-content {
   display: flex;
-  flex-grow: 1;
-  margin: auto;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 0 50px;
 }
 
-.welcome-page > #community {
-  background-image: url('../assets/images/community.jpeg');
+p {
+  font-size: 15px;
+}
+
+div > .inventory, .community, .marketplace {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 750px) {
+  #log-in > h1 {
+    font-size: 50px;
+  }
+
+  #mobile-menu {
+    visibility: visible;
+    display: flex;
+    z-index: 2;
+    margin-left: auto;
+  }
+
+  #menu-bar {
+    width: 45px;
+    height: 40px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+  }
   
-}
+  .bar {
+    height: 5px;
+    width: 100%;
+    background-color: rgb(163, 2, 2);
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  } 
 
-.welcome-page > #inventory {
-  background-image: url('../assets/images/sneakers.jpeg');
-}
+  #bar1 {
+    transform: translateY(-4px);
+  }
+  
+  #bar3 {
+    transform: translateY(4px);
+  }
+  
+  .nav {
+    transition: 0.3s ease;
+    display: none;
+  }
+  
+  .nav ul {
+    padding: 0 22px;
+  }
+  
+  .nav li {
+    list-style: none;
+    padding: 12px 0;
+  }
+  
+  .nav li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .nav li a:hover {
+    font-weight: bold;
+  }
+  
+  .menu-bg, #menu {
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+  
+  .menu-bg {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(163, 2, 2, 1), rgba(163, 2, 2, 0.664));
+    border-radius: 70%;
+    transition: 0.3s ease;
+  }
+  
+  .change {
+    display: block;
+  }
+  
+  .change .bar {
+    background-color: white;
+  }
+  
+  .change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+  
+  .change #bar2 {
+    opacity: 0;
+  }
+  
+  .change #bar3 {
+    transform: translateY(-6px) rotateZ(45deg);
+  }
+  
+  .change-bg {
+    width: 520px;
+    height: 460px;
+    transform: translate(18rem, -12rem);
+  }
 
-.welcome-page > #marketplace {
-  background-image: url('../assets/images/marketplace.jpeg');
+  #desktop-menu {
+    visibility: hidden;
+    display: none;
+  }
 }

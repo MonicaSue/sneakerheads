@@ -22,7 +22,7 @@ router.put('/:sneakerId/comments/:commentId', isLoggedIn, sneakersCtrl.updateCom
 
 router.delete('/:sneakerId', isLoggedIn, sneakersCtrl.delete)
 router.delete('/:sneakerId/saleSheets/:saleSheetId', isLoggedIn, sneakersCtrl.deleteSaleSheet)
-router.delete(':/sneakerId/comments/:commentId', isLoggedIn, sneakersCtrl.deleteComment)
+router.delete('/:sneakerId/comments/:commentId', isLoggedIn, sneakersCtrl.deleteComment)
 
 export {
   router

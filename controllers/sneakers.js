@@ -1,4 +1,5 @@
 import { Sneaker } from '../models/sneaker.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Sneaker.find({owner: req.user.profile._id})
@@ -52,6 +53,7 @@ function show(req, res) {
   Sneaker.findById(req.params.sneakerId)
   .populate([
     {path: 'owner'},
+    {path: 'comments.author'}
   ])
   .then(sneaker => {
     res.render('sneakers/show', {
@@ -156,15 +158,92 @@ function deleteSaleSheet(req, res) {
 }
 
 function addComment(req, res) {
-
+  Sneaker.findById(req.params.sneakerId)
+  po
+  .then(sneaker => {
+    req.body.author = req.user.profile._id
+    sneaker.comments.push(req.body)
+    sneaker.save()
+    .then(() => {
+      res.redirect(`/sneakers/${sneaker.id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirct('/sneakers')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirct('/sneakers')
+  })
 }
 
 function editComment(req, res) {
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    const comment = sneaker.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      res.render('sneakers/editComment', {
+        sneaker, 
+        comment,
+        title: 'Edit Comment'
+      }) 
+    } else {
+      throw new Error('Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/sneakers')
+  })
+}
 
+function updateComment(req, res) {
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    const comment = sneaker.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      comment.set(req.body)
+      sneaker.save()
+      .then(() => {
+        res.redirect(`/sneakers/${sneaker._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/sneakers')
+      })
+    } else {
+      throw new Error('Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirct('/sneakers')
+  })
 }
 
 function deleteComment(req, res) {
-
+  Sneaker.findById(req.params.sneakerId)
+  .then(sneaker => {
+    const comment = sneaker.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      sneaker.comments.remove(comment)
+      sneaker.save()
+      .then(() => {
+        res.redirect(`/sneakers/${sneaker._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/sneakers')
+      })
+    } else {
+      throw new Error('Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/sneakers')
+  })
 }
 
 export {
@@ -180,5 +259,6 @@ export {
   deleteSaleSheet,
   addComment,
   editComment,
+  updateComment,
   deleteComment,
 }

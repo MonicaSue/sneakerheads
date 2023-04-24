@@ -18,6 +18,7 @@ router.post('/:sneakerId/saleSheets', isLoggedIn, sneakersCtrl.createSaleSheets)
 router.post('/:sneakerId/comments', isLoggedIn, sneakersCtrl.addComment)
 
 router.put('/:sneakerId', isLoggedIn, sneakersCtrl.update)
+router.put('/:sneakerId/comments/:commentId', isLoggedIn, sneakersCtrl.updateComment)
 
 router.delete('/:sneakerId', isLoggedIn, sneakersCtrl.delete)
 router.delete('/:sneakerId/saleSheets/:saleSheetId', isLoggedIn, sneakersCtrl.deleteSaleSheet)

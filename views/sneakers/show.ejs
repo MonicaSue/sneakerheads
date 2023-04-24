@@ -83,22 +83,17 @@
       <ul>
         <% sneaker.comments.forEach(comment => { %>
           <li>
-            <img 
-              class="profile-avatar"
-              src="<%= profile.avatar %>" 
-              alt="<%= profile.name %>'s avatar"
-            >
-            <h6><%= profile.name %></h6>
+            <h6><%= comment.author.name %></h6>
             <%= comment.content %>
             <% if (comment.author.equals(user?.profile._id)) { %>
               <form 
-                action="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/?_method=DELETE"
+                action="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>?_method=DELETE"
                 method="POST"
                 class="inline"
                 >
                 <button class="btn" type="submit">X</button>
               </form>
-                <a href="sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/edit">
+                <a href="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/edit">
                   <button class="btn">Edit</button>
                 </a>
             <% } %>

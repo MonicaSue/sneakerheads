@@ -155,6 +155,18 @@ function deleteSaleSheet(req, res) {
   })
 }
 
+function addComment(req, res) {
+
+}
+
+function editComment(req, res) {
+
+}
+
+function deleteComment(req, res) {
+
+}
+
 export {
   index,
   newSneakers as new,
@@ -165,5 +177,8 @@ export {
   update,
   deleteSneaker as delete,
   createSaleSheets,
-  deleteSaleSheet
+  deleteSaleSheet,
+  addComment,
+  editComment,
+  deleteComment,
 }

@@ -1,9 +1,9 @@
-/* body {
-  background-image: url('/assets/images/bedroom_images/bedroom2.png');
+body {
+  background-image: url('/assets/images/bedroom_images/bedroom5.png');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-} */
+}
 
 * {
   margin: 0;
@@ -28,13 +28,12 @@ h1 {
   /* max-height: 700px; */
 }
 
-ul {
-  list-style: none;
-}
+
 
 .shoebox-gallery {
   /* border: 2px black solid;
   background: rgba(255, 255, 255, 0.42); */
+  list-style: none;
   max-height: 750px;
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +46,8 @@ ul {
   flex-basis: 175px;
   position: relative;
   cursor: pointer;
+  display: inline-block;
+  text-align: center;
 }
 
 .shoebox-gallery li img {

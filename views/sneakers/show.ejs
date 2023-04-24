@@ -28,53 +28,92 @@
     <div><%= sneaker.sku %></div>
     <div>Size</div>
     <div><%= sneaker.size %></div>
+  <% if (sneaker.owner.equals(user?.profile._id)) { %>
     <div>Purchase Price</div>
     <div>$<%= sneaker.purchasePrice %></div>
     <div>Ready to sell or trade?</div>
     <div><%= sneaker.isForSale ? 'Yes' : 'No' %></div>
   </section>
   <section class="sneaker-sale-sheet">
-    <% if (sneaker.saleSheets.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>Condition</th>
-            <th>Sale Price</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% sneaker.saleSheets.forEach(saleSheet => { %>
+      <% if (sneaker.saleSheets.length) { %>
+        <table>
+          <thead>
             <tr>
-              <td><%= saleSheet.condition %></td>
-              <td>$<%= saleSheet.salePrice %></td>
-              <td>
-                <form 
-                  action="/sneakers/<%= sneaker._id %>/saleSheets/<%= saleSheet._id %>?_method=DELETE"
-                  method="POST"
-                >
-                  <button type="submit">X</button>
-                </form>
-              </td>
+              <th>Condition</th>
+              <th>Sale Price</th>
+              <th>Delete</th>
             </tr>
-          <% }) %>
-        </tbody>
-      </table>
-    <% } %>
-    <% if (sneaker.isForSale && !sneaker.saleSheets.length) { %>
+          </thead>
+          <tbody>
+            <% sneaker.saleSheets.forEach(saleSheet => { %>
+              <tr>
+                <td><%= saleSheet.condition %></td>
+                <td>$<%= saleSheet.salePrice %></td>
+                <td>
+                  <form 
+                    action="/sneakers/<%= sneaker._id %>/saleSheets/<%= saleSheet._id %>?_method=DELETE"
+                    method="POST"
+                  >
+                    <button type="submit">X</button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } %>
+      <% if (sneaker.isForSale && !sneaker.saleSheets.length) { %>
+        <form 
+          id="add-sellsheet-form"
+          action="/sneakers/<%= sneaker._id %>/saleSheets"
+          method="POST"
+        >
+        <label for="condition-input">Condition:</label>
+        <input type="text" name="condition" id="condition-input">
+        <label for="sale-price-input">Sale Price</label>
+        <input type="text" name="salePrice" id="sale-price-input">
+        <button type="submit">Add Sale Sheet</button>
+        </form>
+      <% } %>
+    </section>
+  <% } %>  
+  <% if (user) { %>
+    <section class="comment-section">
+      <h3>Comments</h3>
+      <ul>
+        <% sneaker.comments.forEach(comment => { %>
+          <li>
+            <img 
+              class="profile-avatar"
+              src="<%= profile.avatar %>" 
+              alt="<%= profile.name %>'s avatar"
+            >
+            <h6><%= profile.name %></h6>
+            <%= comment.content %>
+            <% if (comment.author.equals(user?.profile._id)) { %>
+              <form 
+                action="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/?_method=DELETE"
+                method="POST"
+                class="inline"
+                >
+                <button class="btn" type="submit">X</button>
+              </form>
+                <a href="sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/edit">
+                  <button class="btn">Edit</button>
+                </a>
+            <% } %>
+          </li>
+        <% }) %>
+      </ul>
       <form 
-        id="add-sellsheet-form"
-        action="/sneakers/<%= sneaker._id %>/saleSheets"
+        action="/sneakers/<%= sneaker._id %>/comments"
         method="POST"
-      >
-      <label for="condition-input">Condition:</label>
-      <input type="text" name="condition" id="condition-input">
-      <label for="sale-price-input">Sale Price</label>
-      <input type="text" name="salePrice" id="sale-price-input">
-      <button type="submit">Add Sale Sheet</button>
+        >
+          <textarea name="content"></textarea><button>→</button>
       </form>
-    <% } %>
-  </section>
+    </section>
+  <% } %>
+
 </main>  
 
   <%- include('../partials/footer') %>

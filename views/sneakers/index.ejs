@@ -18,10 +18,10 @@
       <li>
         <% sneakers.forEach(sneaker => { %>
           <div class="overlay">
-            <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %></a>
+            <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %>
             <img 
               src="../assets/images/sneakerbox_images/<%= sneaker.  brand %>.png" 
-              alt="sneakerbox">
+              alt="sneakerbox"></a>
           </div>
         <% }) %>
       </li>

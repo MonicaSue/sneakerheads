@@ -19,18 +19,18 @@
       <option value="Yeezy">Yeezy</option>
     </select>
     <label for="nickname-input">Nickname:</label>
-    <input type="text" name="nickname" id="nickname-input">
+    <input type="text" name="nickname" id="nickname-input" autocomplete="off">
     <label for="releaseYear-input">Release Year:</label>
     <input type="number" name="releaseYear" id="releaseYear-input" min="1900" max="2099" step="1" autocomplete="off" placeholder="YYYY">
     <label for="sku-input">SKU:</label>
-    <input type="text" name="sku" id="sku-input">
+    <input type="text" name="sku" id="sku-input" autocomplete="off">
     <label for="size-input">Size:</label>
     <input type="number" name="size" id="size-input" min="1" max="30" step="0.5">
     <label for="purchasePrice-input">Purchase Price:</label>
     <input type="number" name="purchasePrice" id="purchasePrice-input">
     <label for="for-sale-checkbox">Ready to sell or trade?</label>
     <input type="checkbox" name="isForSale" id="for-sale-checkbox">
-    <button type="submit">Add to Inventory</button>
+    <button type="submit" id="btn">Add to Inventory</button>
   </form>
 </main>
 

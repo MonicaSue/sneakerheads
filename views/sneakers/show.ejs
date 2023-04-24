@@ -7,10 +7,10 @@
   <div class="button-section">
     <% if (sneaker.owner.equals(user?.profile._id)) { %>     
       <a href="/sneakers/<%= sneaker._id %>/edit">
-        <button>Update</button>
+        <button id="btn">Update</button>
       </a>
       <form action="/sneakers/<%= sneaker._id %>?_method=Delete" method="POST">
-        <button type="submit">Remove</button>
+        <button type="submit" id="btn">Remove</button>
       </form>
     <% } %>
   </div>
@@ -54,7 +54,7 @@
                     action="/sneakers/<%= sneaker._id %>/saleSheets/<%= saleSheet._id %>?_method=DELETE"
                     method="POST"
                   >
-                    <button type="submit">X</button>
+                    <button type="submit" id="btn">X</button>
                   </form>
                 </td>
               </tr>
@@ -78,7 +78,7 @@
         </select>
         <label for="sale-price-input">Sale Price</label>
         <input type="text" name="salePrice" id="sale-price-input">
-        <button type="submit">Add Sale Sheet</button>
+        <button type="submit" id="btn">Add Sale Sheet</button>
         </form>
       <% } %>
   </section>
@@ -103,10 +103,10 @@
               method="POST"
               class="inline"
                 >
-                <button class="btn" type="submit">X</button>
+                <button id="btn" type="submit">X</button>
               </form>
                 <a href="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/edit">
-                  <button class="btn">Edit</button>
+                  <button id="btn">Edit</button>
                 </a>
             <% } %>
           </li>

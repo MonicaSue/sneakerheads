@@ -6,26 +6,22 @@
   <h1><%= title %></h1>
   <div class="search-add">
     <form action="/sneakers/search" method="GET">
-      <input type="search" name="brandName" placeholder="Search Brand" autocomplete="off">
-      <button type="submit">Search</button>
+      <input type="search" name="brandName" placeholder="Search Brand" autocomplete="off" id="search">
+      <button type="submit" id="btn">Search</button>
     </form>
     <a href="/sneakers/new">
-      <button class="btn">+</button>
+      <button id="btn">+</button>
     </a>
   </div>
   <div class="shoebox-container">
-    <ul class="shoebox-gallery">
-      <li>
-        <% sneakers.forEach(sneaker => { %>
-          <div class="overlay">
-            <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %>
-            <img 
-              src="../assets/images/sneakerbox_images/<%= sneaker.  brand %>.png" 
-              alt="sneakerbox"></a>
-          </div>
+    <div class="shoebox-gallery">
+      <% sneakers.forEach(sneaker => { %>
+        <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %>
+        <img 
+          src="../assets/images/sneakerbox_images/<%= sneaker.  brand %>.png"
+          alt="sneakerbox"></a>
         <% }) %>
-      </li>
-    </ul>
+    </div>
   </div>
 </main>
 

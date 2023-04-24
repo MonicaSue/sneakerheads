@@ -22,54 +22,32 @@ h1 {
 }
 
 .shoebox-container {
-  /* border: 2px rgb(216, 10, 10) solid;
-  background-color: rgba(169, 169, 169, 0.734); */
   padding: 40px 5%;
-  /* max-height: 700px; */
 }
-
-
 
 .shoebox-gallery {
-  /* border: 2px black solid;
-  background: rgba(255, 255, 255, 0.42); */
   list-style: none;
   max-height: 750px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: center;
-  /* gap: 10px; */
-
 }
 
-.shoebox-gallery > li {
-  flex-basis: 175px;
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-}
-
-.shoebox-gallery li img {
-  object-fit: cover;
-  max-width: 100%;
+.shoebox-gallery img {
+  max-width: 120px;
   height: auto;
   vertical-align: middle;
   border-radius: 5px;
 }
 
-.overlay > a {
-  /* position: center; */
-  /* max-width: 100%;
-  height: auto; */
+.shoebox-gallery a {
   background: rgba(255, 255, 255, 0.579);
-  top: 0;
-  left: 0;
   color: black;
   border-radius: 5px;
-  /* display: flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
 

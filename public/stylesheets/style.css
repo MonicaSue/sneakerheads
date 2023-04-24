@@ -20,6 +20,14 @@ body {
   margin: 0;
 }
 
+#desktop-menu {
+  margin-left: auto;
+}
+
+#desktop-menu > a {
+  padding-left: 30px;
+}
+
 #mobile-menu {
   visibility: hidden;
   display: none;
@@ -43,11 +51,6 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.right {
-  /* margin-left: auto; */
-  
 }
 
 #log-in {
@@ -111,7 +114,30 @@ div > .inventory, .community, .marketplace {
   margin: 0;
 }
 
+.landing-container {
+  
+}
 
+#search {
+  padding: 5px 5px;
+}
+
+#btn {
+  display: inline-block;
+  padding: 5px 20px;
+  border: 2px solid rgb(163, 2, 2);
+  border-radius: 2px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: rgb(163, 2, 2);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+btn:hover {
+  border: 2px solid rgb(97, 1, 1);
+}
 
 @media only screen and (max-width: 750px) {
   #log-in > h1 {

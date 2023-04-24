@@ -81,15 +81,21 @@
         <button type="submit">Add Sale Sheet</button>
         </form>
       <% } %>
-    </section>
+  </section>
   <% } %>  
   <% if (user) { %>
     <section class="comment-section">
       <h3>Comments</h3>
+      <form 
+        action="/sneakers/<%= sneaker._id %>/comments"
+        method="POST"
+        >
+          <textarea name="content"></textarea><button>→</button>
+      </form>
       <ul>
         <% sneaker.comments.forEach(comment => { %>
           <li>
-            <h6><%= comment.author.name %></h6>
+            <h4><%= comment.author.name %></h4>
             <%= comment.content %>
             <% if (comment.author.equals(user?.profile)) { %>
               <form 
@@ -106,12 +112,6 @@
           </li>
         <% }) %>
       </ul>
-      <form 
-        action="/sneakers/<%= sneaker._id %>/comments"
-        method="POST"
-        >
-          <textarea name="content"></textarea><button>→</button>
-      </form>
     </section>
   <% } %>
 

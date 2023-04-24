@@ -46,7 +46,8 @@ main {
 }
 
 .right {
-  margin-left: auto;
+  /* margin-left: auto; */
+  
 }
 
 #log-in {
@@ -217,4 +218,5 @@ div > .inventory, .community, .marketplace {
     visibility: hidden;
     display: none;
   }
+
 }

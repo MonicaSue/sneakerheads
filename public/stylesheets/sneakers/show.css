@@ -10,25 +10,15 @@ img {
   margin-bottom: 20px;
 }
 
-section {
+.sneaker-details {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 16px;
 }
 
-section div:nth-child(odd) {
+.sneaker-details :nth-child(odd) {
   font-weight: bold;
 }
-
-/* ul {
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
-}
-
-li {
-  font-weight: bold;
-} */
 
 table {
   font-size: 20px;
@@ -48,6 +38,25 @@ form * {
   padding: 5px;
   border-radius: 5px;
 }
+
+.comment-section {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+li {
+  /* font-weight: bold; */
+} 
 
 
 /* #add-review-form {

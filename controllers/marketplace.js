@@ -4,7 +4,6 @@ import { Sneaker } from '../models/sneaker.js'
 function index(req, res) {
   Sneaker.find({ isForSale: 'true' })
   .then(sneakers => {
-    console.log('marketplace console', sneakers.saleSheets)
     res.render('marketplace/index', {
       sneakers,
       title: 'Marketplace'

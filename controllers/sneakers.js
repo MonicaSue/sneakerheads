@@ -159,7 +159,6 @@ function deleteSaleSheet(req, res) {
 
 function addComment(req, res) {
   Sneaker.findById(req.params.sneakerId)
-  po
   .then(sneaker => {
     req.body.author = req.user.profile._id
     sneaker.comments.push(req.body)

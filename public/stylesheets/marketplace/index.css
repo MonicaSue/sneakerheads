@@ -6,10 +6,11 @@ body {
 
 
 .sneaker-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* flex-direction: row;
   flex-wrap: wrap-reverse;
-  justify-content: center;
+  justify-content: center; */
   
 }
 
@@ -27,4 +28,12 @@ body {
   object-fit: cover;
   height: 150px;
   width: 200px;
+}
+
+@media only screen and (max-width: 750px) {
+  .sneaker-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }

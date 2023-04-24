@@ -69,7 +69,13 @@
           method="POST"
         >
         <label for="condition-input">Condition:</label>
-        <input type="text" name="condition" id="condition-input">
+        <select name="condition" id="condition-input">
+          <option value="Grade A: Deadstock" selected>Grade A: Deadstock</option>
+          <option value="Grade B: VND">Grade B: VND</option>
+          <option value="Grade C: Lightly Used">Grade C: Lightly Used</option>
+          <option value="Grade D: Worn">Grade D: Worn</option>
+          <option value="Grade E: Beat">Grade E: Beat</option>
+        </select>
         <label for="sale-price-input">Sale Price</label>
         <input type="text" name="salePrice" id="sale-price-input">
         <button type="submit">Add Sale Sheet</button>

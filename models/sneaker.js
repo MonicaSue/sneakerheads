@@ -10,8 +10,11 @@ const commentSchema = new Schema({
 })
 
 const saleSheetSchema = new Schema({
-  condition: String,
-  salePrice: Number,
+  condition: {
+    type: String,
+    enum: ['Grade A: Deadstock', 'Grade B: VND', 'Grade C: Lightly Used', 'Grade D: Worn', 'Grade E: Beat']
+  },
+    salePrice: Number,
 })
 
 const sneakerSchema = new Schema({

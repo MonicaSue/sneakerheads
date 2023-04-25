@@ -14,26 +14,23 @@
       </form>
     <% } %>
   </div>
-  <% if (sneaker.imageUrl) { %>
-    <img src="<%= sneaker.imageUrl %>" alt="sneakers" width="auto" height="200px">
-  <% } %>  
-  <section class="sneaker-details">
-    <div>Brand</div>
-    <div><%= sneaker.brand %></div>
-    <div>Nickname</div>
-    <div><%= sneaker.nickname %></div>
-    <div>Release Year</div>
-    <div><%= sneaker.releaseYear %></div>
-    <div>SKU</div>
-    <div><%= sneaker.sku %></div>
-    <div>Size</div>
-    <div><%= sneaker.size %></div>
-  <% if (sneaker.owner.equals(user?.profile._id)) { %>
-    <div>Purchase Price</div>
-    <div>$<%= sneaker.purchasePrice %></div>
-    <div>Ready to sell or trade?</div>
-    <div><%= sneaker.isForSale ? 'Yes' : 'No' %></div>
-  </section>
+  <div class="flex-container">
+    <% if (sneaker.imageUrl) { %>
+      <img src="<%= sneaker.imageUrl %>" alt="sneakers" width="auto" height="200px">
+    <% } else {%>
+      <img src="/assets/images/image-coming-soon.jpg" alt="image-coming-soon" width="200px" height="200px">
+    <% } %>  
+    <section class="sneaker-details">
+      <h3><%= sneaker.nickname %></h3>
+      <div><strong>Brand:</strong> <%= sneaker.brand %></div>
+      <div><strong>Release Year:</strong> <%= sneaker.releaseYear %></div>
+      <div><strong>SKU:</strong> <%= sneaker.sku %></div>
+      <div><strong>Size:</strong> <%= sneaker.size %></div>
+    <% if (sneaker.owner.equals(user?.profile._id)) { %>
+      <div><strong>Purchase Price:</strong> $<%= sneaker.purchasePrice %></div>
+      <div><strong>Ready to sell or trade?</strong>   <%= sneaker.isForSale ? 'Yes' : 'No' %></div>
+    </section>
+  </div>
   <section class="sneaker-sale-sheet">
       <% if (sneaker.saleSheets.length) { %>
         <table>

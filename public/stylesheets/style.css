@@ -12,11 +12,8 @@ html {
 }
 
 body {
-  background-color: #807979;
-  color: #f6f6f6;
-  /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  color: black;
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
 }
 
@@ -26,6 +23,8 @@ body {
 
 #desktop-menu > a {
   padding-left: 30px;
+  text-decoration: none;
+  color: black;
 }
 
 #mobile-menu {
@@ -44,6 +43,16 @@ nav {
 
 nav > #logo {
   color: rgb(163, 2, 2);
+}
+
+
+#desktop-menu > a.active {
+  color: rgb(163, 2, 2);
+}
+
+nav > a:hover {
+  background-color: rgb(163, 2, 2);
+  color: white;
 }
 
 main {
@@ -87,7 +96,7 @@ main {
 }
 
 .full-background-color {
-  background-color: rgba(163, 2, 2, 0.25);
+  background-color: rgba(163, 2, 2, 0.90);
 }
 
 .feature-content {
@@ -114,8 +123,36 @@ div > .inventory, .community, .marketplace {
   margin: 0;
 }
 
-.landing-container {
-  
+
+
+#grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+}
+
+#grid-container > div {
+  text-align: center;
+  font-size: 30px;
+}
+
+#landing-logo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+#landing-imageOne {
+  object-fit: cover;
+  width: 100%;
+}
+
+#landing-imageTwo {
+  object-fit: cover;
+  width: 100%;
+}
+
+#landing-content {
+
 }
 
 #search {

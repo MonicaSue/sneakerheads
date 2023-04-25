@@ -3,11 +3,23 @@
   <%- include('./partials/nav') %>
 <% } %>
 
-<main>
   <% if (user) { %>
-      <section class="landing-container">
-
-      </section>
+    <div id="grid-container"> 
+      <div id="landing-logo">
+        <h3>icon</h3>
+        <h3>SNEAKERHEADS</h3>
+        <p></p>
+      </div>
+      <div id="landing-imageOne">
+        <img src="/assets/images/landing_page_images/model.jpeg" alt="sneaker-model">
+      </div>
+      <div id="landing-imageTwo">
+        <img src="/assets/images/landing_page_images/sneakers.jpeg" alt="sneakers">
+      </div>
+      <div id="landing-content">
+        page content
+      </div>
+    </div>
   <% } else { %>
     <div id="log-in">
       <h1>
@@ -46,19 +58,18 @@
         <div class="full-background-color">  
           <div class="feature-content">  
             <div class="inventory">
-              <h4>Inventory<br>Management</h4><br><img src="../assets/Images/landing_page_images/sneaker-icon.png" alt="sneaker-icon"><br><p>Track & manage<br>your collection</p>
+              <h4>Inventory<br>Management</h4><br><img src="../assets/images/landing_page_images/sneaker-icon.png" alt="sneaker-icon"><br><p>Track & manage<br>your collection</p>
             </div>
             <div class="community">
-              <h4>Community</h4><br><img src="../assets/Images/landing_page_images/community-icon.png" alt="community-icon"><br><p>Connect with the<br>sneaker culture</p>
+              <h4>Community</h4><br><img src="../assets/images/landing_page_images/community-icon.png" alt="community-icon"><br><p>Connect with the<br>sneaker culture</p>
             </div>
             <div class="marketplace">
-              <h4>Marketplace</h4><br><img src="../assets/Images/landing_page_images/marketplace-icon.png" alt="marketplace-icon"><br><p>Buy・Sell・Trade</p>
+              <h4>Marketplace</h4><br><img src="../assets/images/landing_page_images/marketplace-icon.png" alt="marketplace-icon"><br><p>Buy・Sell・Trade</p>
             </div>
           </div>
         </div>  
       </div>
     </div>
   <% } %>
-</main>
 
 <%- include('./partials/footer') %>

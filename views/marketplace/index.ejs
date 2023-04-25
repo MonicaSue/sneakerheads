@@ -10,7 +10,7 @@
       <div class="sneaker-card">
         <a href="/sneakers/<%= sneaker._id %>"><img src="<%= sneaker.imageUrl %>" alt="sneakers" height="200px" width="auto"></a>
         <% sneaker.saleSheets.forEach(saleSheet => { %>
-          <p>$<%= saleSheet.salePrice %> ・ <%= sneaker.nickname %></p>
+          <p><span id="green">$<%= saleSheet.salePrice %></span> ・ <%= sneaker.nickname %></p>
         <% }) %>  
       </div>
     <% }) %>

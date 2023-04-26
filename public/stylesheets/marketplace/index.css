@@ -1,5 +1,8 @@
 body {
   color: black;
+  background-image: url('/assets/images/joe-woods-4Zaq5xY5M_c-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .sneaker-container {

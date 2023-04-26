@@ -80,7 +80,7 @@
           </select>
           <label for="sale-price-input">Sale Price</label>
           <input type="text" name="salePrice" id="sale-price-input" required>
-          <button type="submit" id="btn">Add Sale Sheet</button>
+          <button type="submit" id="style-btn"><i class="fas fa-plus-circle fa-lg"></i></button>
           </form>
         <% } %>
       <% } %>
@@ -91,18 +91,16 @@
     <div class="comment-section">
       <div class="comment-header">
         <div class="comment-title">
-          <h3>Comments</h3>
-        </div>
-        <div class="comment-count">
-            <%= sneaker.comments.length %> comments
+          <h3><%= sneaker.comments.length %> Comments</h3>
         </div>
       </div>
       <div class="comment-form">
         <form 
           action="/sneakers/<%= sneaker._id %>/comments"
           method="POST"
+          class="comment-submit"
           >
-            <textarea name="content" placeholder="Type here ..."></textarea><button>→</button>
+            <textarea name="content" rows="3" cols="60" placeholder="Type comment here ..."></textarea><button id="style-btn"><i class="fas fa-share fa-lg"></i></button>
         </form>
       </div>
       <div class="comment-card-section">
@@ -110,7 +108,7 @@
           <div class="comment-card">
             <div class="comment-card-header">
               <div class="comment-author-avatar">
-                <img src="<%= comment.author.avatar %>" alt="avatar" height="45" width="auto">
+                <img src="<%= comment.author.avatar %>" alt="avatar" height="30" width="auto">
               </div>
               <div class="comment-author">
                 <h4><%= comment.author.name %></h4>
@@ -123,15 +121,15 @@
               <div class="comment-buttons">
                 <% if (comment.author.equals(user?.profile)) { %>
                   <form 
-                  action="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>?_method=DELETE" 
-                  method="POST"
-                  class="inline"
-                    >
-                    <button id="btn" type="submit">X</button>
+                    action="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>?_method=DELETE" 
+                    method="POST"
+                    class="inline"
+                  >
+                    <button id="style-btn" type="submit"><i class="fa fa-trash" style="color: #000000;"></i></button>
                   </form>
-                    <a href="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/edit">
-                      <button id="btn">Edit</button>
-                    </a>
+                  <a href="/sneakers/<%= sneaker._id %>/comments/<%= comment._id %>/edit">
+                      <button id="style-btn"><i class="far fa-edit" style="color: #000000;"></i></button>
+                  </a>
                 <% } %>
               </div>
             </div>

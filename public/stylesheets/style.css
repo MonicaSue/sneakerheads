@@ -47,11 +47,11 @@ nav > #logo {
 }
 
 
-#desktop-menu > a.active {
-  color: rgb(163, 2, 2);
+#desktop-menu > a#active {
+  text-decoration: underline overline #FF3028;
 }
 
-nav > a:hover {
+nav > a :hover {
   background-color: rgb(163, 2, 2);
   color: white;
 }
@@ -87,6 +87,27 @@ main {
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+#style-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.comment-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.comment-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 10px;
+  gap: 10px;
 }
 
 @keyframes spin {
@@ -125,35 +146,39 @@ main {
 
 .icon-border {
   background-color: white;
-  height: 60px;
+  height: 80px;
   text-align: center;
   transform: rotate(45deg);
-  width: 60px;
+  width: 80px;
   margin-bottom: 20px;
+  box-shadow: 0 0 50px 15px #e04848;
 }
 
 .icon {
   color: rgb(163, 2, 2);
-  font-size: 30px;
+  font-size: 60px;
   font-weight: 300;
   display: table-cell;
-  height: 60px;
+  height: 80px;
   transform: rotate(-45deg);
   vertical-align: middle;
-  width: 60px;
+  width: 80px;
 
 }
 
 .intro {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 25px;
   width: 100%;
-  margin-top: 20px;
+  font-size: large;
 }
 
 .flex-image-one {
-  width: 100%;
-  height: 50vh;
+  object-fit: cover;
+  /* width: 50%;
+  height: 50%; */
+  min-width: 50%;
+  max-height: 450px;
 }
 
 
@@ -166,8 +191,11 @@ main {
 }
 
 .flex-image-two {
-  width: 100%;
-  height: 50vh;
+  object-fit: cover;
+  /* width: 50%;
+  height: 50%; */
+  min-width: 50%;
+  max-height: 450px;
 }
 
 .flex-content {
@@ -177,8 +205,7 @@ main {
   align-items: center;
   width: 100%;
   height: 100%;
-  gap: 30px;
-  /* background-color: rgba(43, 226, 150, 0.395); */
+  gap: 40px;
 }
 
 .inventory, .community, .marketplace {
@@ -203,11 +230,11 @@ main {
   padding: 5px 5px;
 }
 
-#btn {
+#out-btn {
   display: inline-block;
   padding: 5px 20px;
   border: 2px solid rgb(163, 2, 2);
-  border-radius: 2px;
+  border-radius: 5px;
   box-sizing: border-box;
   text-decoration: none;
   font-weight: 300;

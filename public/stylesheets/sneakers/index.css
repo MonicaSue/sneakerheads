@@ -41,7 +41,7 @@ h1 {
 }
 
 .shoebox-gallery a {
-  background: rgba(255, 255, 255, 0.579);
+  /* background: rgba(255, 255, 255, 0.579); */
   color: black;
   border-radius: 5px;
   display: flex;

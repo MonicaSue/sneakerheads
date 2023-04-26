@@ -4,10 +4,9 @@ import { Profile } from '../models/profile.js'
 function index(req, res) {
   Sneaker.find({owner: req.user.profile._id})
   .then(sneakers => {
-    console.log(sneakers)
     res.render('sneakers/index', {
       sneakers,
-      title: 'My Inventory'
+      title: 'My Inventory',
     })
   })
   .catch(err => {
@@ -25,7 +24,6 @@ function newSneakers(req, res) {
 // code found https://coderrocketfuel.com/article/handle-get-request-query-string-parameters-in-express-js
 function search(req, res) {
   const brandName = req.query.brandName
-  console.log('BrandSEARCH', brandName)
   Sneaker.find({ brand: brandName })
   .then(sneakers => {
     res.render('sneakers/search', {
@@ -40,7 +38,6 @@ function create(req, res) {
   req.body.isForSale = !!req.body.isForSale
   Sneaker.create(req.body)
   .then(sneaker => {
-    console.log(sneaker)
     res.redirect('/sneakers')
   })
   .catch(err => {
@@ -68,8 +65,6 @@ function show(req, res) {
 }
 
 function edit(req, res) {
-  console.log('edit')
-  console.log(req.params.sneakerId)
   Sneaker.findById(req.params.sneakerId)
   .then(sneaker => {
     res.render('sneakers/edit', {

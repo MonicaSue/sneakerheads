@@ -15,6 +15,7 @@ body {
   color: black;
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
+  background-color: #dfdede;
 }
 
 #desktop-menu {
@@ -63,96 +64,139 @@ main {
 }
 
 #log-in {
-  margin-top: 100px;
+  margin-top: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  height: 100%;
 }
 
 #google-login {
-  margin-top: 50px;
-}
-
-#log-in > h1 {
-  font-family: 'Staatliches', Helvetica, Tahoma, sans-serif;
-  font-size: 70px;
-  margin:auto;
-  color: rgb(163, 2, 2);
-  text-shadow: 
-    1px 0px 1px #ccc, 0px 1px 1px #eee, 
-    2px 1px 1px #ccc, 1px 2px 1px #eee,
-    3px 2px 1px #ccc, 2px 3px 1px #eee,
-    4px 3px 1px #ccc, 3px 4px 1px #eee,
-    5px 4px 1px #ccc, 4px 5px 1px #eee,
-    6px 5px 1px #ccc, 5px 6px 1px #eee,
-    7px 6px 1px #ccc;
-  transform-style: preserve-3d;
-}
-
-.feature-container {
   margin-top: 100px;
 }
 
-.full-background-color {
-  background-color: rgba(163, 2, 2, 0.90);
+#log-in > h1 {
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-size: 70px;
+  font-weight: 300;
+  margin:auto;
+  color: rgb(163, 2, 2);
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-.feature-content {
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.flex-container {
+  /* margin-top: 50px; */
   display: flex;
-  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.flex-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+}
+
+.flex-icon {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 50px;
+  align-items: center;
+  width: 100%;
+  /* height: 100%; */
+
 }
 
-p {
-  font-size: 15px;
+.icon-border {
+  background-color: white;
+  height: 60px;
+  text-align: center;
+  transform: rotate(45deg);
+  width: 60px;
+  margin-bottom: 20px;
 }
 
-div > .inventory, .community, .marketplace {
+.icon {
+  color: rgb(163, 2, 2);
+  font-size: 30px;
+  font-weight: 300;
+  display: table-cell;
+  height: 60px;
+  transform: rotate(-45deg);
+  vertical-align: middle;
+  width: 60px;
+
+}
+
+.intro {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.flex-image-one {
+  width: 100%;
+  height: 50vh;
+}
+
+
+.flex-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+
+.flex-image-two {
+  width: 100%;
+  height: 50vh;
+}
+
+.flex-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 30px;
+  /* background-color: rgba(43, 226, 150, 0.395); */
+}
+
+.inventory, .community, .marketplace {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 200px;
-  height: 250px;
-  padding: 0;
-  margin: 0;
+  height: 100%;
 }
 
-
-
-#grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+.inventory > p, .community > p, .marketplace > p {
+  font-size: 14px;
 }
 
-#grid-container > div {
-  text-align: center;
-  font-size: 30px;
-}
-
-#landing-logo {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-
-#landing-imageOne {
-  object-fit: cover;
-  width: 100%;
-}
-
-#landing-imageTwo {
-  object-fit: cover;
-  width: 100%;
-}
-
-#landing-content {
-
+.inventory > h4, .community > h4, .marketplace > h4 {
+  font-weight: 500;
+  margin-top: 0;
 }
 
 #search {
@@ -178,7 +222,7 @@ btn:hover {
 
 @media only screen and (max-width: 750px) {
   #log-in > h1 {
-    font-size: 50px;
+    font-size: 38px;
   }
 
   #mobile-menu {

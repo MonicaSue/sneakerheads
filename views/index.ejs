@@ -4,20 +4,31 @@
 <% } %>
 
   <% if (user) { %>
-    <div id="grid-container"> 
-      <div id="landing-logo">
-        <h3>icon</h3>
-        <h3>SNEAKERHEADS</h3>
-        <p></p>
+    <div class="flex-container"> 
+      <div class="flex-top">
+        <div class="flex-icon">
+          <div class="icon-border">
+            <div class="icon">S</div>
+          </div>
+          <div class="intro">
+            Exclusive Sneaker Club
+          </div>
+        </div>
+        <img class="flex-image-one" src="/assets/images/landing_page_images/sneaker2.jpeg" alt="sneaker-model">
       </div>
-      <div id="landing-imageOne">
-        <img src="/assets/images/landing_page_images/model.jpeg" alt="sneaker-model">
-      </div>
-      <div id="landing-imageTwo">
-        <img src="/assets/images/landing_page_images/sneakers.jpeg" alt="sneakers">
-      </div>
-      <div id="landing-content">
-        page content
+      <div class="flex-bottom">
+        <img class="flex-image-two" src="/assets/images/landing_page_images/sneakers.jpeg" alt="pile-of-sneakers">
+        <div class="flex-content">
+          <div class="inventory">
+            <h4>Inventory<br>Management</h4><br><img src="../assets/images/landing_page_images/sneaker-icon.png" alt="sneaker-icon"><br><p>Track & manage<br>your collection</p>
+          </div>
+          <div class="community">
+            <h4>Community</h4><br><img src="../assets/images/landing_page_images/community-icon.png" alt="community-icon"><br><p>Connect with the<br>sneaker culture</p>
+          </div>
+          <div class="marketplace">
+            <h4>Marketplace</h4><br><img src="../assets/images/landing_page_images/marketplace-icon.png" alt="marketplace-icon"><br><p>Buy・Sell・Trade</p>
+          </div>
+        </div>
       </div>
     </div>
   <% } else { %>
@@ -46,7 +57,7 @@
         ></div>
         <div 
           class="g_id_signin"
-          data-type="standard"
+          data-type="icon"
           data-size="large"
           data-theme="outline"
           data-text="sign_in_with"
@@ -54,7 +65,7 @@
           data-logo_alignment="left"
         ></div>
       </div>
-      <div class="feature-container">
+      <!-- <div class="feature-container">
         <div class="full-background-color">  
           <div class="feature-content">  
             <div class="inventory">
@@ -68,7 +79,7 @@
             </div>
           </div>
         </div>  
-      </div>
+      </div> -->
     </div>
   <% } %>
 

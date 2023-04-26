@@ -36,13 +36,30 @@ body {
 }
 
 .content-nicknameYear {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
+.nickname {
+  font-weight: 500;
+  font-size: 21px;
+}
+
+.year {
+  bottom: 0;
+}
+
+.card-details {
+margin-top: 10px;
+}
+
 .sale-sheet {
+  margin-top: 15px;
   border: solid black 2px;
   display: flex;
   flex-direction: row;
+  padding: 10px 0;
 }
 
 .comment-section {
@@ -56,6 +73,12 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.comment-count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .comment-form {

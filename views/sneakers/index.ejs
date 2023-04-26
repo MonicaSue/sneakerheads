@@ -4,6 +4,9 @@
 
 <main>
   <h1><%= title %></h1>
+  <h3>
+    <%= sneakers.length %> Sneakers : $
+  </h3>
   <div class="search-add">
     <form action="/sneakers/search" method="GET">
       <input type="search" name="brandName" placeholder="Search Brand" autocomplete="off" id="search">

@@ -48,8 +48,8 @@
         <div>SKU <%= sneaker.sku %></div>
         <div><%= sneaker.isForSale ? 'Ready to Sell' : 'Not Ready to Sell' %></div>
       </div>
-      <div class="sale-sheet">
-        <% if (sneaker.saleSheets.length) { %>
+      <% if (sneaker.saleSheets.length) { %>
+        <div class="sale-sheet">
           <% sneaker.saleSheets.forEach(saleSheet => { %>
             <%= saleSheet.condition %>
             $<%= saleSheet.salePrice %>
@@ -62,28 +62,28 @@
               </form>
             <% } %>
           <% }) %>
+      <% } %>
+      <% if (sneaker.owner.equals(user?.profile._id)) { %>
+        <% if (sneaker.isForSale && !sneaker.saleSheets.length) { %>
+          <form 
+          id="add-sellsheet-form"
+          action="/sneakers/<%= sneaker._id %>/saleSheets"
+          method="POST"
+          >
+          <label for="condition-input">Condition:</label>
+          <select name="condition" id="condition-input">
+            <option value="Grade A: Deadstock" selected>Grade A: Deadstock</option>
+            <option value="Grade B: VND">Grade B: VND</option>
+            <option value="Grade C: Lightly Used">Grade C: Lightly Used</option>
+            <option value="Grade D: Worn">Grade D: Worn</option>
+            <option value="Grade E: Beat">Grade E: Beat</option>
+          </select>
+          <label for="sale-price-input">Sale Price</label>
+          <input type="text" name="salePrice" id="sale-price-input" required>
+          <button type="submit" id="btn">Add Sale Sheet</button>
+          </form>
         <% } %>
-        <% if (sneaker.owner.equals(user?.profile._id)) { %>
-          <% if (sneaker.isForSale && !sneaker.saleSheets.length) { %>
-            <form 
-            id="add-sellsheet-form"
-            action="/sneakers/<%= sneaker._id %>/saleSheets"
-            method="POST"
-            >
-            <label for="condition-input">Condition:</label>
-            <select name="condition" id="condition-input">
-              <option value="Grade A: Deadstock" selected>Grade A: Deadstock</option>
-              <option value="Grade B: VND">Grade B: VND</option>
-              <option value="Grade C: Lightly Used">Grade C: Lightly Used</option>
-              <option value="Grade D: Worn">Grade D: Worn</option>
-              <option value="Grade E: Beat">Grade E: Beat</option>
-            </select>
-            <label for="sale-price-input">Sale Price</label>
-            <input type="text" name="salePrice" id="sale-price-input">
-            <button type="submit" id="btn">Add Sale Sheet</button>
-            </form>
-          <% } %>
-        <% } %>
+      <% } %>
       </div>
     </div>
   </div>
@@ -94,7 +94,7 @@
           <h3>Comments</h3>
         </div>
         <div class="comment-count">
-          XX comments
+            <%= sneaker.comments.length %> comments
         </div>
       </div>
       <div class="comment-form">
@@ -102,7 +102,7 @@
           action="/sneakers/<%= sneaker._id %>/comments"
           method="POST"
           >
-            <textarea name="content"></textarea><button>→</button>
+            <textarea name="content" placeholder="Type here ..."></textarea><button>→</button>
         </form>
       </div>
       <div class="comment-card-section">

@@ -21,7 +21,7 @@ const sneakerSchema = new Schema({
   imageUrl: String,
   brand: {
     type: String,
-    enum: ['Adidas', 'Converse', 'Jordan', 'New_Balance', 'Nike', 'Reebok', 'Vans', 'Yeezy'],
+    enum: ['adidas', 'converse', 'jordan', 'new_balance', 'nike', 'reebok', 'vans', 'yeezy'],
     default: 'Nike',
   },
   nickname: String,

@@ -10,8 +10,6 @@ router.get('/', isLoggedIn, profilesCtrl.index)
 router.get('/:profileId', isLoggedIn, profilesCtrl.show)
 
 
-
-
 export {
   router
 }

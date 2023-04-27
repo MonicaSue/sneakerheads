@@ -15,12 +15,9 @@
     <% sneakers.forEach(sneaker => { %>
       <div class="sneaker-card">
         <a href="/sneakers/<%= sneaker._id %>"><img src="<%= sneaker.imageUrl %>" alt="sneakers" height="200px" width="auto"></a>
-        
-
       </div>
     <% }) %>
-
   </div>
-  </main>
+</main>
 
 <%- include('../partials/footer') %>

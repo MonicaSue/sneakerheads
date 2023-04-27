@@ -138,65 +138,6 @@
       </div>
     </div>
   <% } %>
-
-
-<!-- 
-  <div class="flex-container"> 
-    <section class="sneaker-details">
- //   <% if (sneaker.owner.equals(user?.profile._id)) { %>
-    </section>
-  </div>
-  <section class="sneaker-sale-sheet">
-   //   <% if (sneaker.saleSheets.length) { %>
-        <table>
-          <thead>
-            <tr>
-              <th>Condition</th>
-              <th>Sale Price</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-         //   <% sneaker.saleSheets.forEach(saleSheet => { %>
-              <tr>
-             //   <td><%= saleSheet.condition %></td>
-           //     <td>$<%= saleSheet.salePrice %></td>
-                <td>
-                  <form 
-                   // action="/sneakers/<%= sneaker._id %>/saleSheets////<//%= saleSheet._id %>?_method=DELETE"
-                    method="POST"
-                  >
-                    <button type="submit" id="btn">X</button>
-                  </form>
-                </td>
-              </tr>
-            <% }) %>
-          </tbody>
-        </table>
-   //   <% } %>
-   //   <% if (sneaker.isForSale && !sneaker.saleSheets.length) { %>
-        <form 
-          id="add-sellsheet-form"
-       //   action="/sneakers/<%= sneaker._id %>/saleSheets"
-          method="POST"
-        >
-        <label for="condition-input">Condition:</label>
-        <select name="condition" id="condition-input">
-          <option value="Grade A: Deadstock" selected>Grade A: Deadstock</option>
-          <option value="Grade B: VND">Grade B: VND</option>
-          <option value="Grade C: Lightly Used">Grade C: Lightly Used</option>
-          <option value="Grade D: Worn">Grade D: Worn</option>
-          <option value="Grade E: Beat">Grade E: Beat</option>
-        </select>
-        <label for="sale-price-input">Sale Price</label>
-        <input type="text" name="salePrice" id="sale-price-input">
-        <button type="submit" id="btn">Add Sale Sheet</button>
-        </form>
-     // <% } %>
-  </section>
- // <% } %>   -->
-  
-
 </main>  
 
   <%- include('../partials/footer') %>

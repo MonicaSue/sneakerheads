@@ -15,6 +15,31 @@ h1 {
   margin-top: 20px;
 }
 
+#btn {
+  padding: 5px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #420000;
+  transition: all 250ms;
+  font-size: 14px;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  color: rgb(163, 2, 2);
+  box-shadow: #420000 2px 2px 0 0;
+}
+
+#btn:hover {
+  background-color: #fff;
+}
+
+#btn:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
 .search-add {
   display: flex;
   gap: 10px;
@@ -39,14 +64,23 @@ h1 {
 }
 
 .summary > * {
-  padding: 20px;
+  padding: 10px;
   
 }
 
-.summary > :nth-child(odd) {
-  background-color: rgb(132, 217, 239);
+h2 {
+  font-weight: 400;
+  margin-top: 10px;
 }
 
+.closet-table, .marketplace-table {
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 5px;
+}
 
 .shoebox-container {
   overflow-y: scroll;
@@ -98,4 +132,11 @@ h1 {
 
 #list a:hover {
   background-color: white;
+}
+
+@media (min-width: 768px) {
+  #btn {
+    min-width: 120px;
+    padding: 0 25px;
+  }
 }

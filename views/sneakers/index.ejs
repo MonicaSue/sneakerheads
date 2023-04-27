@@ -14,24 +14,60 @@
   </div>
   <div class="main">
     <div class="summary">
-      <h2>
-        <%= sneakers.length %> Sneakers
-      </h2>
-      <h3>
-        <%  
-          let totalCost = 0
-          sneakers.forEach((sneaker) => {
-            totalCost += (sneaker.purchasePrice)
-          })
-        %>
-        Total cost: $<%= Math.round(totalCost).toLocaleString('en-US') %>
-      </h3>
-      <h3>
-        Average cost: $<%= Math.round(totalCost/sneakers.length) %>
-      </h3>
+      <h2>Collection Closet</h2>
       <a href="/sneakers/new">
-        <button id="btn">Add More Sneakers</button>
+        <button id="btn">Add Sneakers</button>
       </a>
+      <table class="closet-table">
+        <tr>
+          <th>Quantity:</th>
+          <td><%= sneakers.length %></td>
+        </tr>
+        <tr>
+          <th>Total Cost:</th>
+          <td><%  
+            let totalCost = 0
+            sneakers.forEach((sneaker) => {
+              totalCost += (sneaker.purchasePrice)
+            })
+          %>
+          $<%= Math.round(totalCost).toLocaleString('en-US') %></td>
+        </tr>
+        <tr>
+          <th>Average Cost:</th>
+          <td>$<%= Math.round(totalCost/sneakers.length) %></td>
+        </tr>
+      </table>
+      <h2>Marketplace</h2>
+      <table class="marketplace-table">
+        <tr>
+          <th>Quantity:</th>
+          <td>
+            <%  
+            let counter = 0
+            sneakers.forEach((sneaker) => {
+              if (sneaker.isForSale === true)
+              counter ++
+            })
+            %>
+            <%= counter %>
+          </td>
+        </tr>
+        <tr>
+          <th>Potential Cash Inflow:</th>
+          <td>
+            <%  
+            let totalRev = 0
+            sneakers.forEach((sneaker) => {
+              sneaker.saleSheets.forEach((saleSheet) => {
+                totalRev += (saleSheet.salePrice)
+              })
+            })
+            %>
+            $<%= Math.round(totalRev).toLocaleString('en-US') %>
+          </td>
+        </tr>
+      </table>
     </div>
     <div class="shoebox-container">
       <div class="shoebox-gallery">

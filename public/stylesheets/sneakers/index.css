@@ -21,16 +21,48 @@ h1 {
   margin: 10px;
 }
 
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 60px;
+  align-items: center;
+}
+
+.summary {
+  border-radius: 20px;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  background-color: white;
+  margin-top: 30px;
+}
+
+.summary > * {
+  padding: 20px;
+  
+}
+
+.summary > :nth-child(odd) {
+  background-color: rgb(132, 217, 239);
+}
+
+
 .shoebox-container {
-  padding: 40px 5%;
+  overflow-y: scroll;
+  width: 500px;
+  height: 400px;
+  scrollbar-width: thin;
+
 }
 
 .shoebox-gallery {
   list-style: none;
   max-height: 750px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   justify-content: center;
+  flex-wrap: wrap-reverse;
 }
 
 .shoebox-gallery img {

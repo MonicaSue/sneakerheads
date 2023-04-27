@@ -15,7 +15,7 @@ body {
   color: black;
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
-  background-color: #dfdede;
+  background-color: #white;
 }
 
 #desktop-menu {
@@ -140,8 +140,6 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* height: 100%; */
-
 }
 
 .icon-border {
@@ -151,7 +149,7 @@ main {
   transform: rotate(45deg);
   width: 80px;
   margin-bottom: 20px;
-  box-shadow: 0 0 50px 15px #e04848;
+  box-shadow: 0 0 50px 15px #a39f9f;
 }
 
 .icon {
@@ -168,15 +166,13 @@ main {
 
 .intro {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 30px;
   width: 100%;
   font-size: large;
 }
 
 .flex-image-one {
   object-fit: cover;
-  /* width: 50%;
-  height: 50%; */
   min-width: 50%;
   max-height: 450px;
 }
@@ -192,8 +188,6 @@ main {
 
 .flex-image-two {
   object-fit: cover;
-  /* width: 50%;
-  height: 50%; */
   min-width: 50%;
   max-height: 450px;
 }
@@ -206,6 +200,7 @@ main {
   width: 100%;
   height: 100%;
   gap: 40px;
+  margin: 0 20px;
 }
 
 .inventory, .community, .marketplace {
@@ -214,16 +209,17 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100%;
 }
 
-.inventory > p, .community > p, .marketplace > p {
-  font-size: 14px;
-}
-
-.inventory > h4, .community > h4, .marketplace > h4 {
-  font-weight: 500;
-  margin-top: 0;
+.inventory > *, .community > *, .marketplace > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: text-top;
+  text-align: center;
+  height: 64px;
+  margin: 0px;
 }
 
 #search {
@@ -241,6 +237,7 @@ main {
   color: rgb(163, 2, 2);
   text-align: center;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 btn:hover {
@@ -351,6 +348,20 @@ btn:hover {
   #desktop-menu {
     visibility: hidden;
     display: none;
+  }
+
+  .flex-top, .flex-bottom {
+    display: flex;
+    flex-direction: column;
+    /* gap: 100px; */
+  }
+
+  .flex-image-one, .flex-image-two {
+    object-fit: scale-down;
+  }
+
+  .flex-icon, .flex-content {
+    height: 450px;
   }
 
 }

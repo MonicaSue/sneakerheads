@@ -3,27 +3,45 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <h3>
-    <%= sneakers.length %> Sneakers : $
-  </h3>
-  <div class="search-add">
-    <form action="/sneakers/search" method="GET">
-      <input type="search" name="brandName" placeholder="Search Brand" autocomplete="off" id="search" required>
-      <button type="submit" id="style-btn"><i class="fas fa-search fa-lg"></i></button>
-    </form>
-    <a href="/sneakers/new">
-      <button id="style-btn"><i class="far fa-plus-square fa-lg"></i></button>
-    </a>
+  <div class="header">
+    <h1><%= title %></h1>
+    <div class="search-add">
+      <form action="/sneakers/search" method="GET">
+        <input type="search" name="brandName" placeholder="Search Brand" autocomplete="off" id="search" required>
+        <button type="submit" id="style-btn"><i class="fas fa-search fa-lg"></i></button>
+      </form>
+    </div>
   </div>
-  <div class="shoebox-container">
-    <div class="shoebox-gallery">
-      <% sneakers.forEach(sneaker => { %>
-        <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %>
-        <img 
-          src="../assets/images/sneakerbox_images/<%= sneaker.brand %>.png"
-          alt="sneakerbox"></a>
-        <% }) %>
+  <div class="main">
+    <div class="summary">
+      <h2>
+        <%= sneakers.length %> Sneakers
+      </h2>
+      <h3>
+        <%  
+          let totalCost = 0
+          sneakers.forEach((sneaker) => {
+            totalCost += (sneaker.purchasePrice)
+          })
+        %>
+        Total cost: $<%= Math.round(totalCost).toLocaleString('en-US') %>
+      </h3>
+      <h3>
+        Average cost: $<%= Math.round(totalCost/sneakers.length) %>
+      </h3>
+      <a href="/sneakers/new">
+        <button id="btn">Add More Sneakers</button>
+      </a>
+    </div>
+    <div class="shoebox-container">
+      <div class="shoebox-gallery">
+        <% sneakers.forEach(sneaker => { %>
+          <a href="/sneakers/<%= sneaker._id %>"><%= sneaker.nickname %>
+          <img 
+            src="/assets/images/sneakerbox_images/<%= sneaker.brand %>.png"
+            alt="sneakerbox"></a>
+          <% }) %>
+      </div>
     </div>
   </div>
 </main>

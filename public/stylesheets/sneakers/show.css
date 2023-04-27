@@ -25,6 +25,14 @@ body {
 
 .card-img {
   padding-right: 20px;
+  min-width: 50%;
+  max-height: 450px;
+}
+
+.card-img > img {
+  object-fit: cover;
+  min-width: 50%;
+  max-height: 450px;
 }
 
 .card-content {
@@ -52,6 +60,10 @@ body {
 
 .card-details {
 margin-top: 10px;
+}
+
+.card-details > * {
+  padding-bottom: 5px;
 }
 
 .sale-sheet {

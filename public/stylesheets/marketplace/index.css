@@ -2,16 +2,13 @@ body {
   color: black;
   background-image: url('/assets/images/joe-woods-4Zaq5xY5M_c-unsplash.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .sneaker-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* flex-direction: row;
-  flex-wrap: wrap-reverse;
-  justify-content: center; */
-  
+  grid-template-columns: repeat(3, 1fr);  
 }
 
 .sneaker-card {
@@ -22,6 +19,7 @@ body {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.95);
   font-weight: 550;
+  filter: drop-shadow(16px 16px 10px rgb(73, 73, 73));
 }
 
 #green {

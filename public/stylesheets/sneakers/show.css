@@ -1,5 +1,6 @@
 body {
-  background-image: #9f9494;
+  background-color: white;
+
 }
 
 .show-header {
@@ -16,16 +17,41 @@ body {
   gap: 10px;
 }
 
+#btn {
+  padding: 8px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #420000;
+  transition: all 250ms;
+  font-size: 14px;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  color: rgb(163, 2, 2);
+  box-shadow: #420000 2px 2px 0 0;
+}
+
+#btn:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+#btn:hover {
+  background-color: rgb(95, 6, 6);
+  color: white;
+}
+
 .show-card {
   display: flex;
   flex-direction: row;
   width: 100%;
   padding: 10px;
+  align-items: center;
 }
 
 .card-img {
-  padding-right: 20px;
-  min-width: 50%;
   max-height: 450px;
 }
 
@@ -36,7 +62,9 @@ body {
 }
 
 .card-content {
-  height: 100%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .content-brand {

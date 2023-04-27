@@ -1,5 +1,5 @@
 # SNEAKERHEADS
-![sneakerheads screenshot](/public/assets/images/sneakerheads.png)
+![sneakerheads screenshot](/public/assets/images/sneakerheads-screenshot.png)
 
 ## [Visit SNEAKERHEADS Here](https://sneakerheads.fly.dev/)
 What is a sneakerhead? "A person who collects and trades sneakers as a hobby, and who typically is knowledgeable about the history of sneakers." - [Dictionary.com](https://www.dictionary.com/browse/sneakerhead#:~:text=noun%20Slang.,ANSWER%20THESE%20COMMON%20GRAMMAR%20DEBATES%3F)
@@ -18,7 +18,6 @@ Planning materials can be found [here](https://trello.com/b/zgSVJvGE/sneakerhead
 * Google OAuth
 * EJS
 * Javascript
-* HTML
 * CSS
 * Git
 * Docker

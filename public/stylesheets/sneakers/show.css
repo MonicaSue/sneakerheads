@@ -5,6 +5,49 @@ body {
   background-position: center;
 }
 
+.parent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.sneaker-show {
+  height: 100vh;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.ad-space {
+  height: 100vh;
+  width: 30%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 50px 500px 10px;
+  align-items: center;
+}
+
+#ga-logo {
+  margin-top: 20px;
+}
+
+#game-ad {
+  margin-top: 60px;
+}
+
+#ga-btn {
+  background-color: rgb(247, 51, 51);
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+.ad-body {
+  text-align: center;
+}
+
 .show-header {
   display: flex;
   flex-direction: row;
@@ -201,5 +244,5 @@ margin-top: 10px;
 
 .comment-buttons {
   padding: 0 0 0 10px;
-
 }
+

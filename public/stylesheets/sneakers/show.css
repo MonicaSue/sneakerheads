@@ -74,7 +74,7 @@ body {
 
 .card-img > img {
   object-fit: cover;
-  min-width: 50%;
+  max-width: 360px;
   max-height: 450px;
 }
 
@@ -230,6 +230,7 @@ margin-top: 10px;
 
 #game-ad {
   margin-top: 60px;
+  object-fit: contain;
 }
 
 #ga-btn {
@@ -241,4 +242,34 @@ margin-top: 10px;
 
 .ad-body {
   text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+  .sneaker-show > * {
+    font-size: 75%;
+  }
+
+  .card-img {
+    object-fit: cover;
+    width: 50%;
+    height: auto;
+  }
+
+
+  .card-content > * {
+    font-size: 75%;
+  }
+
+  
+  .ad-body {
+    font-size: 75%;
+  }
+
+  #ga-btn {
+    font-size: 80%;
+  }
+
+  #game-ad {
+    max-height: 350px;
+  }
 }

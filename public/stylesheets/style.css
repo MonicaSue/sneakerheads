@@ -42,10 +42,10 @@ nav {
   min-height: 60px;
 }
 
-nav > #logo {
+#home-logo {
+  text-decoration: none;
   color: rgb(163, 2, 2);
 }
-
 
 #desktop-menu > a#active {
   text-decoration: underline overline #FF3028;

@@ -5,20 +5,22 @@
 <body>
   <% if (user) { %>
     <nav>
-      <div id="logo">
-        <span data-text="S">S</span>
-        <span data-text="N">N</span>
-        <span data-text="E">E</span>
-        <span data-text="A">A</span>
-        <span data-text="K">K</span>
-        <span data-text="E">E</span>
-        <span data-text="R">R</span>
-        <span data-text="H">H</span>
-        <span data-text="E">E</span>
-        <span data-text="A">A</span>
-        <span data-text="D">D</span>
-        <span data-text="S">S</span>
-      </div> 
+      <a id="home-logo" href="/">
+        <div id="logo">
+          <span data-text="S">S</span>
+          <span data-text="N">N</span>
+          <span data-text="E">E</span>
+          <span data-text="A">A</span>
+          <span data-text="K">K</span>
+          <span data-text="E">E</span>
+          <span data-text="R">R</span>
+          <span data-text="H">H</span>
+          <span data-text="E">E</span>
+          <span data-text="A">A</span>
+          <span data-text="D">D</span>
+          <span data-text="S">S</span>
+        </div> 
+      </a>
       <div id="desktop-menu">
         <a 
           href="/sneakers" class="right" id="<%= title === 'My Inventory' ? 'active' : '' %>"

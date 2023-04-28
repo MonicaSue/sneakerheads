@@ -1,4 +1,3 @@
-import { Profile } from '../models/profile.js'
 import { Sneaker } from '../models/sneaker.js'
 
 function index(req, res) {

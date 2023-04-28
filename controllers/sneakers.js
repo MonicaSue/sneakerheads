@@ -1,5 +1,5 @@
 import { Sneaker } from '../models/sneaker.js'
-import { Profile } from '../models/profile.js'
+
 
 function index(req, res) {
   Sneaker.find({owner: req.user.profile._id})

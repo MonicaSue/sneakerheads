@@ -35,7 +35,7 @@
         </tr>
         <tr>
           <th>Average Cost:</th>
-          <td>$<%= Math.round(totalCost/sneakers.length) %></td>
+          <td>$<%= sneakers.length === 0 ? 0 : Math.round(totalCost/sneakers.length) %></td>
         </tr>
       </table>
       <h2>Marketplace</h2>

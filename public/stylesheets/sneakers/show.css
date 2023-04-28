@@ -1,14 +1,14 @@
 body {
   background-color: white;
-
 }
 
 .show-header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
   padding: 10px;
+  width: 625px;
+  align-self: flex-start;
+  justify-content: space-between;
 }
 
 .show-buttons {
@@ -43,12 +43,12 @@ body {
   color: white;
 }
 
+
 .show-card {
   display: flex;
   flex-direction: row;
-  width: 100%;
+    width: 100%;
   padding: 10px;
-  align-items: center;
 }
 
 .card-img {
@@ -65,10 +65,20 @@ body {
   padding-left: 20px;
   display: flex;
   flex-direction: column;
+  font-size: 20px;
+  width: 250px;
+  max-height: 450px;
+  align-content: flex-start;
+}
+
+.card-header {
+  padding-bottom: 50px;
 }
 
 .content-brand {
   text-decoration: underline;
+  padding-bottom: 2px;
+  font-size: 18px;
 }
 
 .content-nicknameYear {
@@ -78,8 +88,8 @@ body {
 }
 
 .nickname {
-  font-weight: 500;
-  font-size: 21px;
+  font-weight: 450;
+  font-size: 28px;
 }
 
 .year {
@@ -91,23 +101,30 @@ margin-top: 10px;
 }
 
 .card-details > * {
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+.for-sale {
+  border: grey outset;
+  margin-top: 25px;
+  padding: 5px;
 }
 
 .sale-sheet {
   margin-top: 15px;
   border: solid black 1px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 10px 0;
+  gap: 10px;
 }
 
 #add-sellsheet-form {
   margin-top: 15px;
   border: solid black 1px;
   display: flex;
-  flex-direction: row;
-  padding: 10px 0;
+  flex-direction: column;
+  padding: 10px 10px;
   gap: 10px;
 }
 
@@ -144,15 +161,15 @@ margin-top: 10px;
   flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
+  max-width: 625px;
 }
 
 .comment-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  max-width: 200px;
+  max-width: 50%;
   height: auto;
-  border: rgba(0, 0, 0, 0.537) solid;
+  border: rgb(82, 81, 81) solid 3px;
   border-radius: 5px;
   padding: 5px;
   margin: 10px 0;
@@ -161,9 +178,10 @@ margin-top: 10px;
 .comment-card-header {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 15px;
   align-items: center;
-  margin-top: 0px;
+  margin: 0 0 0 0;
+  padding-left: 10px;
 }
 
 .comment-author-avatar > img {
@@ -173,4 +191,9 @@ margin-top: 10px;
 .comment-card-content {
   width: 100%;
   padding-left: 10px;
+}
+
+.comment-buttons {
+  padding: 0 0 0 10px;
+
 }

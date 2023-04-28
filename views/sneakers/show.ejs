@@ -46,13 +46,15 @@
           <div>Cost $<%= sneaker.purchasePrice %></div>
         <% } %>
         <div>SKU <%= sneaker.sku %></div>
-        <div><%= sneaker.isForSale ? 'Ready to Sell' : 'Not Ready to Sell' %></div>
+      </div>
+      <div class="for-sale">
+        <%= sneaker.isForSale ? 'Ready to Sell' : 'Not Ready to Sell' %>
       </div>
       <% if (sneaker.saleSheets.length) { %>
         <div class="sale-sheet">
           <% sneaker.saleSheets.forEach(saleSheet => { %>
-            <%= saleSheet.condition %>
-            $<%= saleSheet.salePrice %>
+            <div><%= saleSheet.condition %></div>
+            <div>Price: $<%= saleSheet.salePrice %></div>
             <% if (sneaker.owner.equals(user?.profile._id)) { %>
               <form 
                 action="/sneakers/<%= sneaker._id %>/saleSheets/<%= saleSheet._id %>?_method=DELETE"
@@ -78,8 +80,8 @@
             <option value="Grade D: Worn">Grade D: Worn</option>
             <option value="Grade E: Beat">Grade E: Beat</option>
           </select>
-          <label for="sale-price-input">Sale Price</label>
-          <input type="text" name="salePrice" id="sale-price-input" required>
+          <label for="sale-price-input">Sale Price:</label>
+          <input type="text" name="salePrice" id="sale-price-input" required autocomplete="off">
           <button type="submit" id="style-btn"><i class="fas fa-plus-circle fa-lg"></i></button>
           </form>
         <% } %>
@@ -100,7 +102,7 @@
           method="POST"
           class="comment-submit"
           >
-            <textarea name="content" rows="3" cols="60" placeholder="Type comment here ..."></textarea><button id="style-btn"><i class="fas fa-share fa-lg"></i></button>
+            <textarea name="content" rows="3" cols="75" placeholder="Type comment here ..."></textarea><button id="style-btn"><i class="fas fa-share fa-lg"></i></button>
         </form>
       </div>
       <div class="comment-card-section">
@@ -112,11 +114,6 @@
               </div>
               <div class="comment-author">
                 <h4><%= comment.author.name %></h4>
-              </div>
-            </div>
-            <div class="comment-card-content">
-              <div class="comment-content">
-                <%= comment.content %>
               </div>
               <div class="comment-buttons">
                 <% if (comment.author.equals(user?.profile)) { %>
@@ -131,6 +128,11 @@
                       <button id="style-btn"><i class="far fa-edit" style="color: #000000;"></i></button>
                   </a>
                 <% } %>
+              </div>
+            </div>
+            <div class="comment-card-content">
+              <div class="comment-content">
+                <%= comment.content %>
               </div>
             </div>
           </div>

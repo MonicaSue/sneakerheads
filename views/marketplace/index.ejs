@@ -7,7 +7,7 @@
   <div class="sneaker-container">
     <% sneakers.forEach(sneaker => { %>
       <div class="sneaker-card">
-        <a href="/sneakers/<%= sneaker._id %>"><img src="<%= sneaker.imageUrl %>" alt="sneakers" height="200px" width="auto"></a>
+        <a href="/marketplace/<%= sneaker._id %>"><img src="<%= sneaker.imageUrl %>" alt="sneakers" height="200px" width="auto"></a>
         <% sneaker.saleSheets.forEach(saleSheet => { %>
           <p><span id="green">$<%= saleSheet.salePrice %></span> ・ <%= sneaker.nickname %></p>
         <% }) %>  

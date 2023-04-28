@@ -1,8 +1,8 @@
 form {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 352px));
-  font-size: 20px;
+  grid-template-columns: repeat(2, minmax(auto, 250px));
+  font-size: 18px;
 }
 
 form * {
@@ -14,6 +14,39 @@ form * {
 form > button {
   grid-column: span 2;
   width: 160px;
+  font-size: 18px;
+  margin-top: 20px;
   margin-left: auto;
-  font-size: 22px;
+}
+
+#for-sale-checkbox {
+  cursor: pointer;
+
+
+}
+
+#btn {
+  padding: 8px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #420000;
+  transition: all 250ms;
+  font-size: 18px;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  color: rgb(163, 2, 2);
+  box-shadow: #420000 2px 2px 0 0;
+}
+
+#btn:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+#btn:hover {
+  background-color: rgb(95, 6, 6);
+  color: white;
 }

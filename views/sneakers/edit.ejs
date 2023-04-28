@@ -8,7 +8,17 @@
     <label for="imageUrl-input">Image URL:</label>
     <input type="text" name="imageUrl" value="<%= sneaker.imageUrl %>" id="imageUrl-input">
     <label for="brand-input">Brand:</label>
-    <input type="text" name="brand" value="<%= sneaker.brand %>" id="brand-input">
+    <select name="brand" id="brand-input">
+      <option value="<%= sneaker.brand %>"><%= sneaker.brand %></option>
+      <option value="adidas">Adidas</option>
+      <option value="converse">Converse</option>
+      <option value="jordan">Jordan</option>
+      <option value="new_balance">New Balance</option>
+      <option value="nike">Nike</option>
+      <option value="reebok">Reebok</option>
+      <option value="vans">Vans</option>
+      <option value="yeezy">Yeezy</option>
+    </select> 
     <label for="nickname-input">Nickname:</label>
     <input type="text" name="nickname" value="<%= sneaker.nickname %>" id="nickname-input">
     <label for="releaseYear-input">Release Year:</label>

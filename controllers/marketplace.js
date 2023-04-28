@@ -15,11 +15,6 @@ function index(req, res) {
   })
 }
 
-function show(req, res) {
-  console.log('marketplace show works')
-}
-
 export {
   index,
-  show,
 }

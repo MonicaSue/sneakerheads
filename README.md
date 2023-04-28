@@ -32,5 +32,7 @@ Planning materials can be found [here](https://trello.com/b/zgSVJvGE/sneakerhead
 
 ## Ice Box
 - [X] Add a marketplace page for users to view current sneakers for sale by other users.
+- [ ] Add 'email seller' functionality for potential buyer.
 - [ ] Add a user to upload their own image.
 - [ ] Add search fields for marketplace based on brand, nickname, release year, and price.
+- [ ] Add mobile friendly views. 

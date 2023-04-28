@@ -6,7 +6,9 @@ body {
   color: white;
 }
 
-
+img {
+  margin-top: 50px;
+}
 
 .sneaker-container {
   display: flex;
